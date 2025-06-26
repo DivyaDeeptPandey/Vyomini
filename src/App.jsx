@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/Homepage/Homepage';
+import HomePage from './pages/Homepage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import MenstrualHealthPage from './pages/MenstrualHealthProgramPage/MenstrualHealthProgramPage';
 import OurTeamPage from './pages/OurTeamPage/OurTeamPage';
