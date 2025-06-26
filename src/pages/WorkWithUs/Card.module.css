@@ -80,27 +80,6 @@
   margin-bottom: 0.8rem;
 }
 
-.applyButton {
-  background: #429122;
-  color: white;
-  border: none;
-  padding: 0.8rem 2rem;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.volunteer .applyButton {
-  background: #ABA104;
-}
-
-.applyButton:hover {
-  opacity: 0.9;
-}
 
 @media (max-width: 480px) {
   .card {

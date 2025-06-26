@@ -6,6 +6,7 @@ import MenstrualHealthPage from './pages/MenstrualHealthProgramPage/MenstrualHea
 import OurTeamPage from './pages/OurTeamPage/OurTeamPage';
 import WorkWithUs from './pages/WorkWithUs/WorkWithUs';
 import MediaGallery from './pages/MediaGallery/MediaGallery';
+import ContactUs from './pages/ContactUs/ContactUs';
 import './App.css';
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/our-team" element={<OurTeamPage />} />
         <Route path="/work-with-us" element={<WorkWithUs />} />
         <Route path="/media-gallery" element={<MediaGallery />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </Router>
   );
