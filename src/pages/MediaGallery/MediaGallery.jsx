@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './MediaGallery.module.css';
 import PressCard from './PressCard';
 import NavBar from '../../components/NavBar/NavBar';
+import Footer from '../../components/Footer/Footer';
 const MediaGallery = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -107,6 +108,7 @@ const MediaGallery = () => {
         ))}
       </motion.div>
     </motion.div>
+    <Footer />
     </>
   );
 };

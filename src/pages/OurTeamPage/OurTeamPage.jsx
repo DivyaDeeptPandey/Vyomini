@@ -6,6 +6,7 @@ import prachiImg from '../../assets/TeamMembers/prachiImg.jpeg';
 import sangeetaImg from '../../assets/TeamMembers/sangeetaImg.jpeg';
 import bhagyashreeImg from '../../assets/TeamMembers/bhagyashreeImg.png';
 import NavBar from '../../components/NavBar/NavBar';
+import Footer from '../../components/Footer/Footer';
 
 // Animation variants
 const containerVariants = {
@@ -113,6 +114,7 @@ const TeamPage = () => {
           </motion.div>
         </motion.div>
       </motion.section>
+      <Footer />
     </div>
   );
 };

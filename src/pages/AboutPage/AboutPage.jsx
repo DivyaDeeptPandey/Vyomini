@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./AboutPage.module.css";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
 const AboutSection = () => {
   return (
@@ -92,6 +93,7 @@ const AboutSection = () => {
         </div>
       </motion.div>
     </section>
+    <Footer />
     </div>
   );
 };

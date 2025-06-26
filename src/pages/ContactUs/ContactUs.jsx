@@ -3,6 +3,7 @@ import styles from './ContactUs.module.css';
 import LocationCard from './LocationCard';
 import NavBar from '../../components/NavBar/NavBar';
 import Button from '../../components/Button/Button';
+import Footer from '../../components/Footer/Footer';
 
 const ContactUs = () => {
     const containerVariants = {
@@ -130,6 +131,7 @@ const ContactUs = () => {
 
                     </motion.div>
                 </motion.section>
+                <Footer />
             </div>
         </>
     );

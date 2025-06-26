@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./MenstrualHealthProgramPage.module.css";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
 // Animation variants
 const containerVariants = {
@@ -97,6 +98,7 @@ export default function MenstrualHealthSection() {
           </motion.p>
         </motion.div>
       </motion.section>
+      <Footer />
     </div>
   );
 }
