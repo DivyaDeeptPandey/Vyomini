@@ -1,0 +1,64 @@
+.card {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  padding: 2rem 2rem 2rem 2rem;
+  border-radius: 10px; 
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);;
+  gap: 3rem;
+}
+
+
+.imageWrapper {
+  flex: 1;
+}
+
+.image {
+  width: 100%;
+  height: 22.25rem;
+  display: block;
+  border-radius: 5px;
+}
+
+.contentWrapper {
+  flex: 1;
+  height: 22.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.textWrapper {
+    
+  display: flex;
+  height: 18.75rem;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.description {
+  font-family: 'Lato', sans-serif;
+  color: #555;;
+  font-size: clamp(1rem, 1.125vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+  }
+  .reverse {
+    flex-direction: row-reverse;
+  }
+}

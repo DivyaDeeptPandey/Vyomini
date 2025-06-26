@@ -1,0 +1,12 @@
+:root {
+  --primary-color: #429122;
+  --secondary-color: #ABA104;
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,117 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.internship {
+  border-top: 5px solid #429122;
+}
+
+.volunteer {
+  border-top: 5px solid #ABA104;
+}
+
+.cardTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.cardSubtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.sectionTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.sectionContent {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 0;
+  list-style: none;
+}
+
+.skillsList li {
+  background: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+}
+
+.questions {
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+  color: #666;
+  margin: 2rem 0;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.questions p {
+  margin-bottom: 0.8rem;
+}
+
+.applyButton {
+  background: #429122;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.volunteer .applyButton {
+  background: #ABA104;
+}
+
+.applyButton:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+}

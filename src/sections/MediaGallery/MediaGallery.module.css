@@ -1,0 +1,208 @@
+.mediaGallerySection {
+  margin-top: 3rem; 
+  padding: 4rem 1rem;
+  width: 100%;
+}
+.heading {
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 3rem;
+  color: #111;
+}
+.carousel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carouselMain {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slideCaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+}
+
+.slideCaption h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.slideCaption p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.navButton:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: 20px;
+}
+
+.nextButton {
+  right: 20px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail {
+  flex: 0 0 80px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.activeThumbnail {
+  border-color: #4a90e2;
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.activeDot {
+  background-color: #4a90e2;
+  transform: scale(1.2);
+}
+.button {
+  margin: 3rem auto 0;
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .carouselMain {
+    aspect-ratio: 4/3;
+  }
+
+  .slideCaption {
+    padding: 1rem;
+  }
+
+  .slideCaption h3 {
+    font-size: 1.2rem;
+  }
+
+  .slideCaption p {
+    font-size: 0.9rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .thumbnail {
+    flex: 0 0 60px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselMain {
+    aspect-ratio: 1/1;
+  }
+
+  .thumbnails {
+    display: none;
+  }
+
+  .slideCaption h3 {
+    font-size: 1rem;
+  }
+
+  .slideCaption p {
+    display: none;
+  }
+}

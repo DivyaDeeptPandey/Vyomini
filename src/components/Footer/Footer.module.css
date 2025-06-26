@@ -1,0 +1,86 @@
+.footer {
+  background-color: #d3d3d3;
+  color: #000;
+  padding: 40px 20px 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.footerContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between; ;
+  gap: 40px;
+}
+
+.section {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+
+h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin-bottom: 6px;
+}
+
+.links a {
+  color: black;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #444;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.socialIcons svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.socialIcons svg:hover {
+  transform: scale(1.2);
+  color: #1a1a1a; /* or any brand color like #0077b5 for LinkedIn etc. */
+}
+.bottom {
+  text-align: center;
+  margin-top: 1.75rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom {
+    margin-top: 30px;
+    text-align: left;
+  }
+}

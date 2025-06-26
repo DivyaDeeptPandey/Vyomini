@@ -1,0 +1,77 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-top: 4px solid #429122;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transform: scale(1);
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.pressTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.card:hover .pressTitle {
+  color: #429122;
+}
+
+.pressExcerpt {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.readMore {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  color: #429122;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.readMore:hover {
+  color: #2a5d16;
+  transform: translateX(2px);
+}
+
+.arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.readMore:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 480px) {
+  .pressTitle {
+    font-size: 1.5rem;
+  }
+  
+  .pressExcerpt {
+    font-size: 0.9rem;
+  }
+}

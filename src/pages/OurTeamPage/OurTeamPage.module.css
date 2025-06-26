@@ -1,0 +1,14 @@
+/* TeamPage.module.css */
+
+.teamSection {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 5vw, 4rem);
+  text-align: center;
+  margin-bottom: 3rem;
+}
