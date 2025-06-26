@@ -127,7 +127,12 @@ const ContactUs = () => {
                         <Button
                             text="Send Us a Message"
                             color="#429122"
-                            styles={{ height: "50px", width: "450px" }}></Button>
+                            styles={{
+                                height: "50px",
+                                width: "100%",            
+                                maxWidth: "450px",        
+                                margin: "0 auto"         
+                            }}></Button>
 
                     </motion.div>
                 </motion.section>

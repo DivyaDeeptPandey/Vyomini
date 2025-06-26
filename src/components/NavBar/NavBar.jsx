@@ -59,7 +59,7 @@ export default function NavBar() {
       <div className={`${styles['mobile-menu']} ${isMenuOpen ? styles.active : ''}`}>
         <a href="/" onClick={() => setIsMenuOpen(false)}>Home</a>
         <a href="/menstrual-health-program" onClick={() => setIsMenuOpen(false)}>Programs</a>
-        <a href="#" onClick={() => setIsMenuOpen(false)}>Online Store</a>
+        <a href="/our-team" onClick={() => setIsMenuOpen(false)}>Our Team</a>
         <a href="/work-with-us" onClick={() => setIsMenuOpen(false)}>Work With Us</a>
         <a href="/media-gallery" onClick={() => setIsMenuOpen(false)}>Gallery</a>
         <a href="/contact-us" onClick={() => setIsMenuOpen(false)}>Contact Us</a>
