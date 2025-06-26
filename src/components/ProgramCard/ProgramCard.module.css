@@ -2,40 +2,41 @@
   display: flex;
   width: 100%;
   background-color: white;
-  padding: 2rem 2rem 2rem 2rem;
-  border-radius: 10px; 
+  padding: 2rem;
+  border-radius: 10px;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin: 4rem 0;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);;
-  gap: 3rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  gap: 2rem; /* Reduced gap for mobile */
 }
-
 
 .imageWrapper {
   flex: 1;
+  width: 100%; /* Ensure full width on mobile */
 }
 
 .image {
   width: 100%;
-  height: 22.25rem;
+  height: auto; /* Changed from fixed height */
+  max-height: 22.25rem; /* Maximum height for larger screens */
   display: block;
   border-radius: 5px;
+  object-fit: cover; /* Ensures image maintains aspect ratio */
 }
 
 .contentWrapper {
   flex: 1;
-  height: 22.25rem;
+  width: 100%; /* Full width on mobile */
   display: flex;
   flex-direction: column;
 }
+
 .textWrapper {
-    
   display: flex;
-  height: 18.75rem;
   flex-direction: column;
+  min-height: auto; /* Remove fixed height */
 }
 
 .title {
@@ -47,18 +48,52 @@
 
 .description {
   font-family: 'Lato', sans-serif;
-  color: #555;;
+  color: #555;
   font-size: clamp(1rem, 1.125vw, 1.125rem);
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
+/* Mobile-first approach - these styles apply by default */
+/* Then we override for larger screens */
+
 @media (min-width: 768px) {
   .card {
     flex-direction: row;
+    gap: 3rem; /* Larger gap on desktop */
+    padding: 2rem;
   }
+  
   .reverse {
     flex-direction: row-reverse;
+  }
+  
+  .image {
+    height: 22.25rem; /* Fixed height only on desktop */
+  }
+  
+  .contentWrapper {
+    height: 22.25rem; /* Fixed height only on desktop */
+  }
+  
+  .textWrapper {
+    height: 18.75rem; /* Fixed height only on desktop */
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 767px) {
+  .card {
+    padding: 1.5rem; /* Slightly less padding on mobile */
+    margin: 2rem 0; /* Smaller margin on mobile */
+  }
+  
+  .title {
+    font-size: 1.8rem; /* Slightly smaller title on mobile */
+  }
+  
+  .description {
+    font-size: 1rem; /* Fixed size on mobile (removes clamp) */
   }
 }

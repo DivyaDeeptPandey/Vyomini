@@ -5,7 +5,7 @@
 }
 .heading {
   text-align: center;
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: clamp(3rem, 8vw, 4rem);
   font-family: 'Bebas Neue', sans-serif;
   margin-bottom: 3rem;
   color: #111;
