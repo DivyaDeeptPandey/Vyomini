@@ -198,7 +198,7 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
         </div>
       </div>
       <motion.button className={styles.button}>
-        <Button text="LEARN MORE" color={colors.primary} styles={{ width: "150px", height: "50px", fontSize: "0.815rem" }} />
+        <Button text="VIEW MORE" link ="/media" color={colors.primary} styles={{ width: "150px", height: "50px", fontSize: "0.815rem" }} />
 
       </motion.button>
     </div>

@@ -5,25 +5,25 @@ import styles from './Testimonial.module.css';
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah Johnson',
-    role: 'Marketing Director, TechCorp',
-    content: 'This service completely transformed our digital presence. The team was professional, responsive, and delivered beyond our expectations.',
+    name: 'Anupam Mishra',
+    role: 'CEO',
+    content: 'VYOMINI model of Sustaianable Sanittaion is the real answer to all sanitation isuues which is affordable also.',
     avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
     rating: 5
   },
   {
     id: 2,
-    name: 'Michael Chen',
-    role: 'CEO, StartupHub',
-    content: 'Incredible results in just three months! Our customer engagement metrics have never been higher. Highly recommended for any business.',
+    name: 'Shivalika Mishra',
+    role: 'CSR Manager, NSF',
+    content: 'We have worked with VYOMINI in 2019 they are committed organization deliver activities in time.',
     avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
     rating: 4
   },
   {
     id: 3,
-    name: 'Emma Rodriguez',
-    role: 'Product Manager, DesignCo',
-    content: 'Working with this team was a game-changer. They understood our vision immediately and brought it to life beautifully.',
+    name: 'Meenu',
+    role: 'SHG members, Hisar',
+    content: 'VYOMINI UDYAMI consortium helped me in my business development.',
     avatar: 'https://randomuser.me/api/portraits/women/63.jpg',
     rating: 5
   }
