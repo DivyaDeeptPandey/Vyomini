@@ -4,7 +4,7 @@ import PressCard from './PressCard';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 
-import bwLogo from '../../assets/pressLogos/bw-businessworld.png';
+import bwLogo from '../../assets/pressLogos/businessworld.png';
 import yourStoryLogo from '../../assets/pressLogos/yourstory.png';
 import tgmLogo from '../../assets/pressLogos/theglitzmedia.png';
 import pibLogo from '../../assets/pressLogos/pib.png';
@@ -15,7 +15,6 @@ import sheThePeopleLogo from '../../assets/pressLogos/shethepeopleLogo.png';
 import scoopWhoopLogo from '../../assets/pressLogos/scoopwhoop.png';
 import wordpressLogo from '../../assets/pressLogos/wordpressLogo.png';
 import theDailyGuardianLogo from '../../assets/pressLogos/theDailyGuardian.png';
-import sisterhoodLogo from '../../assets/pressLogos/sisterhood.png';
 
 const MediaGallery = () => {
   const containerVariants = {
