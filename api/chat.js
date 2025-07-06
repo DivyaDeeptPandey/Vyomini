@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   const sessionClient = new SessionsClient({
     credentials: {
       client_email: process.env.DIALOGFLOW_CLIENT_EMAIL,
-      private_key: process.env.DIALOGFLOW_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      private_key: process.env.DIALOGFLOW_PRIVATE_KEY,
     },
   });
 
