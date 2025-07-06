@@ -11,39 +11,39 @@ const ChatbotIcon = () => {
   };
 
   const handleSend = async (e) => {
-  e.preventDefault();
-  const input = e.target.elements.chatInput;
-  const text = input.value.trim();
-  if (!text) return;
+    e.preventDefault();
+    const input = e.target.elements.chatInput;
+    const text = input.value.trim();
+    if (!text) return;
 
-  // Show user's message immediately
-  setMessages((prev) => [...prev, { text, from: 'user' }]);
-  input.value = '';
+    // Show user's message immediately
+    setMessages((prev) => [...prev, { text, from: 'user' }]);
+    input.value = '';
 
-  try {
-    const res = await fetch('/api/chat', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ message: text }),
-});
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: text }),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    // Show bot's reply
-    setMessages((prev) => [...prev, { text: data.reply, from: 'bot' }]);
-  } catch (err) {
-    console.error('Error talking to backend:', err);
-    setMessages((prev) => [
-      ...prev,
-      {
-        text: 'Oops! Something went wrong while contacting the bot.',
-        from: 'bot',
-      },
-    ]);
-  }
-};
+      // Show bot's reply
+      setMessages((prev) => [...prev, { text: data.reply, from: 'bot' }]);
+    } catch (err) {
+      console.error('Error talking to backend:', err);
+      setMessages((prev) => [
+        ...prev,
+        {
+          text: 'Oops! Something went wrong while contacting the bot.',
+          from: 'bot',
+        },
+      ]);
+    }
+  };
 
   return (
     <div className={styles.chatbotContainer}>
@@ -68,9 +68,8 @@ const ChatbotIcon = () => {
               {messages.map((msg, index) => (
                 <p
                   key={index}
-                  className={`${styles.message} ${
-                    msg.from === 'user' ? styles.userMessage : ''
-                  }`}
+                  className={`${styles.message} ${msg.from === 'user' ? styles.userMessage : ''
+                    }`}
                 >
                   {msg.text}
                 </p>
