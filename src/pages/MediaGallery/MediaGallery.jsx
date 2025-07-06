@@ -4,7 +4,7 @@ import PressCard from './PressCard';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 
-import bwLogo from '../../assets/pressLogos/businessworld.png';
+import bwLogo from '../../assets/PressLogos/businessworld.png';
 import yourStoryLogo from '../../assets/pressLogos/yourstory.png';
 import tgmLogo from '../../assets/pressLogos/theglitzmedia.png';
 import pibLogo from '../../assets/pressLogos/pib.png';
