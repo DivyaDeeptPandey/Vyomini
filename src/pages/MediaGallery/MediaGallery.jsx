@@ -5,16 +5,16 @@ import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 
 import bwLogo from '../../assets/PressLogos/businessworld.png';
-import yourStoryLogo from '../../assets/pressLogos/yourstory.png';
-import tgmLogo from '../../assets/pressLogos/theglitzmedia.png';
-import pibLogo from '../../assets/pressLogos/pib.png';
-import expressLogo from '../../assets/pressLogos/indianexpress.png';
-import gpjLogo from '../../assets/pressLogos/gpj.png';
-import herZindagiLogo from '../../assets/pressLogos/herzindagi.png';
-import sheThePeopleLogo from '../../assets/pressLogos/shethepeopleLogo.png';
-import scoopWhoopLogo from '../../assets/pressLogos/scoopwhoop.png';
-import wordpressLogo from '../../assets/pressLogos/wordpressLogo.png';
-import theDailyGuardianLogo from '../../assets/pressLogos/theDailyGuardian.png';
+import yourStoryLogo from '../../assets/PressLogos/yourstory.png';
+import tgmLogo from '../../assets/PressLogos/theglitzmedia.png';
+import pibLogo from '../../assets/PressLogos/pib.png';
+import expressLogo from '../../assets/PressLogos/indianexpress.png';
+import gpjLogo from '../../assets/PressLogos/gpj.png';
+import herZindagiLogo from '../../assets/PressLogos/herzindagi.png';
+import sheThePeopleLogo from '../../assets/PressLogos/shethepeopleLogo.png';
+import scoopWhoopLogo from '../../assets/PressLogos/scoopwhoop.png';
+import wordpressLogo from '../../assets/PressLogos/wordpressLogo.png';
+import theDailyGuardianLogo from '../../assets/PressLogos/theDailyGuardian.png';
 
 const MediaGallery = () => {
   const containerVariants = {
