@@ -11,7 +11,7 @@ import RuralOutreachProgram from './pages/RuralOutreachProgramPage/RuralOutreach
 import CampusConnectPage from './pages/CampusConnectPage/CampusConnectPage';
 import VyominiUdhyamiPage from './pages/VyominiUdhyamiPage/VyominiUdhyamiPage';
 import MediaGalleryPage from './pages/PhotoGalleryPage/MediaGallery';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './components/scrollToTop';
 import './App.css';
 
 
