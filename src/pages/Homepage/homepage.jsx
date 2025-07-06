@@ -3,7 +3,7 @@ import AboutUsSection from "../../sections/AboutUs/AboutUs";
 import GoalsSection from "../../sections/Goals/Goals";
 import ProgramSection from "../../sections/Programs/Programs";
 import OurImpactSection from "../../sections/OurImpact/OurImpact";
-import MediaGallery from "../../sections/MediaGallery/MediaGallery";
+import MediaGallery from "../../sections/PhotoGallery/PhotoGallery";
 import Testimonial from "../../sections/Testimonial/Testimonial";
 import ChatbotIcon from "../../components/ChatBot/ChatBot";
 import GetInTouchForm from "../../sections/GetInTouch/GetInTouch";

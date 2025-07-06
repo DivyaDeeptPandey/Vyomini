@@ -34,17 +34,17 @@ export default function NavBar() {
             {isDropdownOpen && (
               <div className={styles.dropdownContent}>
                 <Link to="/menstrual-health-program">Menstrual Health Program</Link>
-                <Link to="/vyomini-suvidha-kendra">Vyomini Suvidha Kendra</Link>
-                <Link to="/rural-outreach">Rural Outreach</Link>
-                <Link to="/women-empowerment">Women Empowerment</Link>
-                <Link to="/franchise-model">Franchise Model</Link>
+                <Link to="/campus-connect-program">Campus Connect</Link>
+                <Link to="/rural-outreach-program">Rural Outreach</Link>
+                <Link to="/vyomini-udhyami-consortium">Vyomini Udhyami Consortium</Link>
               </div>
             )}
           </div>
 
           <Link to="/our-team" className={pathname === '/our-team' ? styles.active : ''}>Our Team</Link>
           <Link to="/work-with-us" className={pathname === '/work-with-us' ? styles.active : ''}>Work With Us</Link>
-          <Link to="/media-gallery" className={pathname === '/media-gallery' ? styles.active : ''}>Gallery</Link>
+          <Link to="/media-gallery" className={pathname === '/media-gallery' ? styles.active : ''}>Media</Link>
+          <Link to="/media" className={pathname === '/media' ? styles.active : ''}>Gallery</Link>
           <Link to="/contact-us" className={pathname === '/contact-us' ? styles.active : ''}>Contact Us</Link>
         </div>
 
@@ -75,17 +75,16 @@ export default function NavBar() {
           {isMobileDropdownOpen && (
             <div className={styles.mobileDropdownContent}>
               <Link to="/menstrual-health-program" onClick={() => setIsMenuOpen(false)}>Menstrual Health Program</Link>
-              <Link to="/vyomini-suvidha-kendra" onClick={() => setIsMenuOpen(false)}>Vyomini Suvidha Kendra</Link>
+              <Link to="/campus-connect-program" onClick={() => setIsMenuOpen(false)}>Campus Connect</Link>
               <Link to="/rural-outreach" onClick={() => setIsMenuOpen(false)}>Rural Outreach</Link>
-              <Link to="/women-empowerment" onClick={() => setIsMenuOpen(false)}>Women Empowerment</Link>
-              <Link to="/franchise-model" onClick={() => setIsMenuOpen(false)}>Franchise Model</Link>
+              <Link to="/vyomini-udhyami-consortium" onClick={() => setIsMenuOpen(false)}>Vyomini Udhyami Consortium</Link>
             </div>
           )}
         </div>
 
         <Link to="/our-team" onClick={() => setIsMenuOpen(false)}>Our Team</Link>
         <Link to="/work-with-us" onClick={() => setIsMenuOpen(false)}>Work With Us</Link>
-        <Link to="/media-gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+        <Link to="/media-gallery" onClick={() => setIsMenuOpen(false)}>Media</Link>
         <Link to="/contact-us" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
         <Button text="Donate" color="#429122" onClick={() => setIsMenuOpen(false)} />
       </div>

@@ -2,19 +2,23 @@
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border-top: 4px solid #429122;
   text-align: left;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  transform: scale(1);
 }
 
 .card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pressTitle {
@@ -22,56 +26,73 @@
   font-size: 1.8rem;
   font-weight: 500;
   color: #333;
-  margin-bottom: 0.8rem;
-  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
   line-height: 1.2;
-  transition: color 0.3s ease;
 }
 
-.card:hover .pressTitle {
-  color: #429122;
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-left: 1rem;
 }
 
 .pressExcerpt {
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
   color: #555;
+  margin-bottom: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
 }
 
-.readMore {
+.dropdownButton {
+  background: none;
+  border: none;
+  color: var(--primary-color);
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.2rem;
-  color: #429122;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  text-align: left;
 }
 
-.readMore:hover {
+.dropdownButton:hover {
   color: #2a5d16;
-  transform: translateX(2px);
 }
 
-.arrow {
-  margin-left: 0.5rem;
-  transition: transform 0.3s ease;
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.readMore:hover .arrow {
-  transform: translateX(3px);
+.link {
+  color: #555;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  border-left: 3px solid #429122;
+  padding-left: 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  color: #2a5d16;
+  background-color: #f8f8f8;
 }
 
 @media (max-width: 480px) {
   .pressTitle {
     font-size: 1.5rem;
   }
-  
+
   .pressExcerpt {
     font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
   }
 }

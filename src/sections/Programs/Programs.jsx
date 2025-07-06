@@ -32,11 +32,13 @@ const ProgramSection = () => {
     image: img2,
     reverse: true,
     buttonColor: colors.secondary,
+    buttonLink: "/rural-outreach-program",
   },
   {
     title: "campus connect",
     description: "Vyomini collaborates with educational institutions to drive transformative change through knowledge exchange, interactive seminars and workshops, innovative field research, and capacity-building programs. Together, we empower communities with sustainable menstrual health solutions while fostering leadership, awareness, and long-term impact—because education is the foundation of empowerment.",
     image: img3,
+    buttonLink: "/campus-connect-program",
   },
   {
     title: "Vyomini Udhyami Consortium",
@@ -44,6 +46,7 @@ const ProgramSection = () => {
     image: img4,
     reverse: true,
     buttonColor: colors.secondary,
+    buttonLink: "/vyomini-udhyami-consortium",
   },
 ];
   return (

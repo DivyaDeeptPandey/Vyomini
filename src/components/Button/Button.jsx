@@ -9,8 +9,12 @@ const Button = ({text, color, styles: inlineStyles={}, link, onClick}) => {
     if (onClick) {
       onClick();
     } else if (link) {
+      if (link.startsWith("http")) {
+      window.open(link, "_blank", "noopener,noreferrer");
+    } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       navigate(link);
+    }
     } else {
       console.warn("No link provided.");
     }

@@ -47,9 +47,10 @@
   justify-content: space-between;
   align-items: center;
 }
-.heading{
-    font-size: 1.5rem;
-    font-weight: 700;
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .closeButton {
@@ -64,6 +65,23 @@
   flex: 1;
   padding: 15px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  background-color: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 75%;
+  align-self: flex-start;
+}
+
+.userMessage {
+  background-color: var(--primary-color);
+  color: white;
+  align-self: flex-end;
 }
 
 .inputArea {
@@ -89,7 +107,6 @@
   cursor: pointer;
 }
 
-/* Responsive design */
 @media (max-width: 480px) {
   .chatWindow {
     width: 300px;
@@ -97,7 +114,7 @@
     bottom: 70px;
     right: 10px;
   }
-  
+
   .chatbotButton {
     width: 50px;
     height: 50px;

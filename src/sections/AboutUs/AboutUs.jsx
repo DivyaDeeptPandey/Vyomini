@@ -32,7 +32,7 @@ const AboutUsSection = () => {
           className={styles.textBox}
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7}}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
           <p>
@@ -45,7 +45,10 @@ const AboutUsSection = () => {
             District of Haryana and Delhi Slums with 360 degree approach with 3As that is Awareness,
             Accessibility and Affordability of the MHM.
           </p>
-          <Link to="/about" className={styles.readMore} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>read more...</Link>
+          <p>
+            With the passage of time development projects extended to other district of Haryana and also launched in different states of India. In a very short span of time 10 lakh women covered under MHM program.
+          </p>
+          { <Link to="/about" className={styles.readMore} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>read more...</Link> }
         </motion.div>
       </div>
     </section>

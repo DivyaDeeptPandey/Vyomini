@@ -1,0 +1,40 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #222;
+}
+
+.heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 6vw, 4rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.imageWrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+}

@@ -71,14 +71,14 @@ const AboutSection = () => {
       >
         <div>
           <h4>Annual Report</h4>
-          <a href="#">Brief Profile</a>
-          <a href="#">Project Report</a>
-          <a href="#">MHM Report</a>
+          <a href="/Brief_Profile.pdf" target="_blank" rel="noopener noreferrer">Brief Profile</a>
+          <a href="/Project_Report.pdf" target="_blank" rel="noopener noreferrer">Project Report</a>
+          <a href="/MHM_Report.pdf" target="_blank" rel="noopener noreferrer">MHM Report</a>
         </div>
         <div>
           <h4>Policies</h4>
-          <a href="#">Policy Manual</a>
-          <a href="#">Finance Manual</a>
+          <a href="/Policy_Manual.pdf" target="_blank" rel="noopener noreferrer">Policy Manual</a>
+          <a href="/Finance_Manual.pdf" target="_blank" rel="noopener noreferrer">Finance Manual</a>
         </div>
         <div>
           <h4>Bank Details</h4>
@@ -87,9 +87,9 @@ const AboutSection = () => {
         </div>
         <div>
           <h4>Audit Report</h4>
-          <a href="#">2022-23</a>
-          <a href="#">2021-22</a>
-          <a href="#">2020-21</a>
+          <a href="/Audit_Report_22-23.pdf" target="_blank" rel="noopener noreferrer">2022-23</a>
+          <a href="/Audit_Report_21-22.pdf" target="_blank" rel="noopener noreferrer">2021-22</a>
+          <a href="/Audit_Report_20-21.pdf" target="_blank" rel="noopener noreferrer">2020-21</a>
         </div>
       </motion.div>
     </section>

@@ -17,6 +17,7 @@
 .contentWrapper {
   display: flex;
   flex-direction: column;
+  height: 400px;
   align-items: center;
   gap: 2rem;
   width: 100%;
@@ -65,18 +66,19 @@
 
 .highlight {
   font-weight: 700;
-  color: #4e9a51;
+  color: var(--primary-color);
 }
 
 .readMore {
-  color: #3c9d40;
+  color: var(--primary-color);
   font-weight: 700;
+  font-size: 1rem;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .readMore:hover {
-  color: #2c6e2e;
+  color: #2c672f;
 }
 
 /* Tablet and above */

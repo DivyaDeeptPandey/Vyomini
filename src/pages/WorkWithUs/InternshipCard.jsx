@@ -45,6 +45,7 @@ const InternshipCard = () => {
             <Button
                 text="Apply Now"
                 color="#429122"
+                link= "https://docs.google.com/forms/d/e/1FAIpQLSfAq7NLBC_XogH533Ha1yKQt_cood7N9W4pQyFkRUKUaAzK9Q/viewform"
                 styles={{
                     height: "50px",
                     width: "100%",            

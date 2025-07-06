@@ -82,7 +82,7 @@
   text-align: center;
   color: white;
   font-family: 'Lato', sans-serif;
-  font-size: clamp(0.5rem, 2vw, 1.025rem);
+  font-size: clamp(0.5rem, 2vw, 1.125rem);
   font-weight: 500;
   display: flex;
   align-items: center;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Goals.module.css';
 import { motion } from 'framer-motion';
-import GoalImg1 from '../../assets/goals1.png';
+import GoalImg1 from '../../assets/goals1.jpg';
 import GoalImg2 from '../../assets/goals2.jpg';
 import GoalImg3 from '../../assets/goals3.jpg';
 
@@ -20,7 +20,7 @@ const goals = [
   },
   {
     img: GoalImg3,
-    title: 'Generate Widespread Awareness about Menstrual Sanitation',
+    title: 'Reduce carbon footprint',
   },
 
 ];
