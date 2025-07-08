@@ -1,8 +1,9 @@
+/* ===== Hero Section Container ===== */
 .hero {
   width: 100%;
   height: 100vh;
-  min-height: 600px; /* Prevent content squishing */
-  max-height: 1200px; /* Limit ultra-wide screens */
+  min-height: 600px;        /* Prevent content squishing */
+  max-height: 1200px;       /* Limit height on ultra-wide screens */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -10,62 +11,70 @@
   justify-content: center;
 }
 
+/* ===== Overlay for Darkening & Layout ===== */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column; /* Stack vertically on mobile */
+  flex-direction: column;  /* Mobile: stack content */
   align-items: center;
   justify-content: center;
   padding: 2rem;
   box-sizing: border-box;
 }
 
+/* ===== Text + Button Section ===== */
 .contentWrapper {
-  width: 100%; /* Full width on mobile */
-  max-width: 1200px; /* Limit content width */
+  width: 100%;
+  max-width: 1200px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center; /* Center on mobile */
+  text-align: center;
 }
 
+/* ===== Heading ===== */
 .heading {
-  font-size: clamp(2.5rem, 8vw, 4.25rem); /* Fluid typography */
+  font-size: clamp(2.5rem, 8vw, 4.25rem);
   font-family: 'Bebas Neue', sans-serif;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
+/* ===== Subheading ===== */
 .subheading {
-  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-size: clamp(0.9rem, 3vw, 1.5rem);
   width: 100%;
   max-width: 600px;
-  margin: 0 0 2rem; /* Center and add bottom margin */
+  margin: 0 0 2rem;
   font-weight: 300;
   font-family: 'Lato', sans-serif;
 }
 
+/* ===== CTA Buttons ===== */
 .buttons {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap; /* Allow button stacking */
-  justify-content: center; /* Center buttons */
+  flex-wrap: wrap;          /* Allow wrap on mobile */
+  justify-content: center;  /* Center on mobile */
 }
 
+/* ===== Stats Section ===== */
 .stats {
-  display: grid; /* Better for responsive layout */
+  display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-items: center;
   gap: 1.5rem;
+  font-weight: 300;
   width: 100%;
   color: white;
-  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(0.8rem, 3vw, 1.7rem);
 }
 
+/* ===== Individual Stat Item ===== */
 .statItem {
   display: flex;
   flex-direction: column;
@@ -73,43 +82,42 @@
   text-align: center;
 }
 
+/* ===== Stat Number Styling ===== */
 .statNumber {
-  font-size: clamp(1.75rem, 5vw, 2.25rem);
-  font-weight: 400;
+  font-size: clamp(0.8rem, 3vw, 1.7rem);
+  font-weight: 500;
   font-family: 'Lato', sans-serif;
 }
 
-/* Tablet Layout (768px+) */
+/* ===== Tablet Layout (768px+) ===== */
 @media (min-width: 768px) {
   .overlay {
-    flex-direction: row; /* Side-by-side layout */
+    flex-direction: row;       /* Side-by-side layout */
     padding: 0 4rem;
   }
 
   .contentWrapper {
     width: 55%;
-    text-align: left; /* Left-align on desktop */
-    margin-left: 0;
+    text-align: left;
     padding-right: 2rem;
   }
 
   .buttons {
-    justify-content: flex-start; /* Left-align buttons */
+    justify-content: flex-start;
   }
 
   .stats {
     width: 45%;
     margin-left: 2rem;
-    margin-bottom: 0;
-    grid-template-columns: 1fr; /* Stack stats vertically */
+    grid-template-columns: 1fr; /* Stack vertically */
   }
 }
 
-/* Desktop Layout (1024px+) */
+/* ===== Desktop Layout (1024px+) ===== */
 @media (min-width: 1024px) {
   .contentWrapper {
     width: 50%;
-    margin-left: clamp(5rem, 10vw, 15rem); /* Fluid margin */
+    margin-left: clamp(5rem, 10vw, 15rem);
   }
 
   .stats {
@@ -118,16 +126,14 @@
   }
 }
 
-/* Ultra-wide screens adjustment */
+/* ===== Ultra-wide Adjustment ===== */
 @media (min-width: 1600px) {
   .contentWrapper {
     max-width: 700px;
   }
 }
 
-/* Add these at the end of your existing CSS */
-
-/* Animate background zoom effect */
+/* ===== Animate Background Zoom Effect on Load ===== */
 .heroAnimate {
   animation: bgZoomFade 2s ease-out forwards;
 }
@@ -142,4 +148,3 @@
     transform: scale(1);
   }
 }
-

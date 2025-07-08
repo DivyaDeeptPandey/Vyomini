@@ -1,0 +1,43 @@
+/* src/components/Loader.module.css */
+
+.loaderWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  gap: 1rem;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top: 6px solid #429122; /* Your brand green */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loaderText {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

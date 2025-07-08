@@ -1,44 +1,50 @@
+/* 🌐 Base card styles (mobile-first) */
 .card {
   display: flex;
+  flex-direction: column; /* Stack image + text vertically on mobile */
+  align-items: center;
   width: 100%;
   background-color: white;
   padding: 2rem;
-  border-radius: 10px;
-  flex-direction: column;
-  align-items: center;
   margin: 4rem 0;
+  gap: 2rem;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  gap: 2rem; /* Reduced gap for mobile */
 }
 
+/* 🖼️ Image container - flexible width */
 .imageWrapper {
   flex: 1;
-  width: 100%; /* Ensure full width on mobile */
+  width: 100%;
 }
 
+/* 📷 Image styling */
 .image {
   width: 100%;
-  height: auto; /* Changed from fixed height */
-  max-height: 22.25rem; /* Maximum height for larger screens */
+  height: auto; /* Scales with content */
+  max-height: 22.25rem; /* Prevents overly tall images */
   display: block;
   border-radius: 5px;
-  object-fit: cover; /* Ensures image maintains aspect ratio */
+  object-fit: cover; /* Maintain aspect ratio without squishing */
 }
 
+/* 📦 Text + Button block */
 .contentWrapper {
   flex: 1;
-  width: 100%; /* Full width on mobile */
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
+/* 📝 Title + Description text */
 .textWrapper {
   display: flex;
   flex-direction: column;
-  min-height: auto; /* Remove fixed height */
+  min-height: auto; /* Allow flexible height */
 }
 
+/* 🎯 Program title */
 .title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2.25rem;
@@ -46,54 +52,57 @@
   font-weight: 400;
 }
 
+/* 📄 Description text */
 .description {
   font-family: 'Lato', sans-serif;
   color: #555;
-  font-size: clamp(1rem, 1.125vw, 1.125rem);
+  font-size: clamp(1rem, 1.125vw, 1.125rem); /* Scales between 1rem and 1.125rem */
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-/* Mobile-first approach - these styles apply by default */
-/* Then we override for larger screens */
-
+/* ================================
+   🖥️ Tablet & Desktop Styles (768px+)
+   ================================ */
 @media (min-width: 768px) {
   .card {
-    flex-direction: row;
-    gap: 3rem; /* Larger gap on desktop */
+    flex-direction: row; /* Side-by-side layout */
+    gap: 3rem;
     padding: 2rem;
   }
-  
+
   .reverse {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; /* Flip layout if reverse prop is true */
   }
-  
+
   .image {
-    height: 22.25rem; /* Fixed height only on desktop */
+    height: 22.25rem; /* Fixed height for consistency */
   }
-  
+
   .contentWrapper {
-    height: 22.25rem; /* Fixed height only on desktop */
+    height: 22.25rem;
   }
-  
+
   .textWrapper {
-    height: 18.75rem; /* Fixed height only on desktop */
+    height: 18.75rem; /* Ensures spacing even with short descriptions */
   }
 }
 
-/* Additional mobile optimizations */
+/* ================================
+   📱 Mobile-Specific Adjustments
+   ================================ */
 @media (max-width: 767px) {
   .card {
-    padding: 1.5rem; /* Slightly less padding on mobile */
-    margin: 2rem 0; /* Smaller margin on mobile */
+    padding: 1.5rem;
+    margin: 2rem 0;
   }
-  
+
   .title {
-    font-size: 1.8rem; /* Slightly smaller title on mobile */
+    font-size: 1.8rem; /* Smaller headings for mobile */
   }
-  
+
   .description {
-    font-size: 1rem; /* Fixed size on mobile (removes clamp) */
+    font-size: 1rem; /* Remove clamp for simplicity */
   }
 }

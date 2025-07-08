@@ -6,44 +6,47 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-        {/* Useful Links */}
+        
+        {/* Column 1: Useful Links */}
         <div className={styles.section}>
-          <h3>Useful Links</h3>
+          <h3 className={styles.sectionTitle}>Useful Links</h3>
           <ul className={styles.links}>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Work With Us</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/work-with-us">Work With Us</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/contact">Contact Us</a></li>
           </ul>
         </div>
 
-        {/* Office Info */}
+        {/* Column 2: Address and Social Icons */}
         <div className={styles.section}>
-          <p>Registered Office:- 40 Sultanpur Mazra, Delhi</p>
-          <p>Pin code: 110086</p>
-          <p>Regional Office:- Shri Ganesh City Vrindavan - 281121</p>
-          <p>NSIC Technical Service Center, near Govind Puri Metro Station, Okhla Phase III New Delhi</p>
+          <h3 className={styles.sectionTitle}>Our Offices</h3>
+          <p>Registered: 40 Sultanpur Mazra, Delhi - 110086</p>
+          <p>Regional: Shri Ganesh City, Vrindavan - 281121</p>
+          <p>NSIC Technical Service Center, Okhla Phase III, New Delhi</p>
+
           <div className={styles.socialIcons}>
-            <FaLinkedin />
-            <FaYoutube />
-            <FaXTwitter />
-            <FaInstagram />
-            <FaFacebookF />
+            <a href="#"><FaLinkedin /></a>
+            <a href="#"><FaYoutube /></a>
+            <a href="#"><FaXTwitter /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaFacebookF /></a>
           </div>
         </div>
 
-        {/* Policies */}
+        {/* Column 3: Policy Links */}
         <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Legal</h3>
           <ul className={styles.links}>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
           </ul>
         </div>
       </div>
 
-      {/* Footer Bottom */}
+      {/* Footer Bottom Bar */}
       <div className={styles.bottom}>
-        <p>@2016 all rights reserved vyomini social enterprise</p>
+        <p>© 2016 All rights reserved — Vyomini Social Enterprise</p>
       </div>
     </footer>
   );

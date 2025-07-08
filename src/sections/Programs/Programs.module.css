@@ -1,14 +1,18 @@
+/* 🔳 Section Wrapper: Full width with inner max width */
 .programSection {
-  background: #f5f5f5;
-  padding: 4rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  background: #f5f5f5;                      /* Light background */
+  padding: 4rem 1rem;                       /* Top-bottom and side spacing */
+  max-width: 1200px;                        /* Max container width for readability */
+  margin: 0 auto;                           /* Center the section */
+  box-sizing: border-box;                  /* Includes padding in width */
 }
 
+/* 🧭 Section Heading: Styled with custom font and fluid size */
 .heading {
-  text-align: center;
-  font-size: clamp(3rem, 8vw, 4rem);
-  font-family: 'Bebas Neue', sans-serif;
-  margin-bottom: 3rem;
-  color: #111;
+  text-align: center;                       /* Center align */
+  font-size: clamp(3rem, 8vw, 4rem);        /* Responsive text size */
+  font-family: 'Bebas Neue', sans-serif;    /* Display font */
+  margin-bottom: 3rem;                      /* Space below heading */
+  color: #111;                              /* Deep gray for contrast */
+  letter-spacing: 1px;                      /* Slight spacing for style */
 }
