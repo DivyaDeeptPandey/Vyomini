@@ -1,21 +1,22 @@
-/* ===== Base Navbar Styles ===== */
+/* ========== Navbar Container ========== */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   height: 4.5rem;
+  width: 100%;
+  padding: 0 1rem;
   background-color: #fff;
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* ========== Logo ========== */
 .nav-logo img {
-  height: auto;
   width: clamp(100px, 20vw, 150px);
+  height: auto;
   transition: transform 0.3s ease;
 }
 
@@ -23,7 +24,7 @@
   transform: scale(1.05);
 }
 
-/* ===== Desktop Navigation ===== */
+/* ========== Desktop Links ========== */
 .nav-links {
   display: none;
   gap: clamp(0.5rem, 1.5vw, 1.5rem);
@@ -31,23 +32,24 @@
 }
 
 .nav-links a,
-.dropdown > span {
+.dropdownTrigger {
   font-family: 'Lato', sans-serif;
   font-size: clamp(0.85rem, 1.2vw, 1rem);
   color: #000;
   text-decoration: none;
-  white-space: nowrap;
   position: relative;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
+  white-space: nowrap;
   cursor: pointer;
 }
 
+/* Underline on hover and active */
 .nav-links a::after,
-.dropdown > span::after {
+.dropdownTrigger::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
@@ -55,23 +57,14 @@
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover,
-.dropdown > span:hover {
-  color: #000;
-}
-
-.nav-links a:not(.active):hover::after,
-.dropdown > span:not(.active):hover::after {
-  width: 100%;
-}
-
+.nav-links a:hover::after,
+.dropdownTrigger:hover::after,
 .nav-links a.active::after,
-.dropdown > span.active::after {
+.dropdownTrigger.active::after {
   width: 100%;
-  background: var(--primary-color);
 }
 
-/* Dropdown Styles */
+/* ========== Desktop Dropdown ========== */
 .dropdown {
   position: relative;
 }
@@ -94,18 +87,38 @@
   transition: color 0.3s ease;
 }
 
-/* ===== Mobile Menu ===== */
+/* ========== Animated Hamburger Icon ========== */
 .hamburger {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
   border: none;
+  background: transparent;
   cursor: pointer;
-  padding: 0;
   z-index: 1001;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger active state → ✕ */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .hamburger:focus {
@@ -113,27 +126,7 @@
   outline-offset: 2px;
 }
 
-.hamburger-line {
-  width: 2rem;
-  height: 0.25rem;
-  background: #000;
-  border-radius: 0.25rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: center;
-}
-
-.hamburger.active .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translate(0.45rem, 0.45rem);
-}
-
-.hamburger.active .hamburger-line:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translate(0.45rem, -0.45rem);
-}
-
+/* ========== Mobile Menu Panel ========== */
 .mobile-menu {
   position: fixed;
   top: 4.5rem;
@@ -141,14 +134,13 @@
   width: 100%;
   height: calc(100vh - 4.5rem);
   background: #fff;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
   transform: translateY(-100%);
   opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              opacity 0.3s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease;
   z-index: 999;
   overflow-y: auto;
 }
@@ -162,9 +154,9 @@
   font-family: 'Lato', sans-serif;
   font-size: 1.25rem;
   color: #000;
+  text-align: center;
   text-decoration: none;
   width: 100%;
-  text-align: center;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -173,34 +165,52 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* Mobile Dropdown */
+/* ========== Mobile Dropdown ========== */
+.mobileDropdown {
+  width: 100%;
+}
+
 .mobileDropdownHeader {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* centers entire group */
   align-items: center;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
-  padding: 1rem 0;
+  gap: 0.5rem; /* adds spacing between text and arrow */
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
   width: 100%;
+  padding: 1rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .mobileDropdownContent {
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mobileDropdownContent a {
-  padding: 0.8rem 0;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-size: 1.1rem;
+  padding: 0.75rem 0;
 }
 
+/* ========== Arrow Icon ========== */
 .dropdownArrow {
   margin-left: 0.5rem;
+  font-size: 1rem;
 }
 
-/* ===== Responsive Breakpoints ===== */
+/* ========== Donate Button Visibility ========== */
+@media (max-width: 768px) {
+  .donate-btn {
+    display: none;
+  }
+}
+
+/* ========== Desktop Breakpoint ========== */
 @media (min-width: 768px) {
   .navbar {
     padding: 0 2rem;
@@ -216,15 +226,8 @@
   }
 }
 
-@media (max-width: 768px) {
-  .donate-btn {
-    display: none;
-  }
-}
-
-/* Accessibility */
+/* ========== Accessibility ========== */
 @media (prefers-reduced-motion) {
-  .hamburger-line,
   .mobile-menu {
     transition: none;
   }

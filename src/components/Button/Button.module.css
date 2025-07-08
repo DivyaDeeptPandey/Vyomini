@@ -1,32 +1,31 @@
-/* ===== Responsive Button ===== */
+/* ========== Responsive Button Styles ========== */
+
 .btn {
-  /* Fluid Sizing */
-  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 2.5vw, 1.8rem);
-  font-size: clamp(0.7rem, 1.8vw, 0.875rem);
+  /* 🔠 Responsive Sizing */
+  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(0.6rem, 1.8vw, 0.785rem);
   min-height: clamp(2.5rem, 8vw, 3rem);
   min-width: max-content;
 
-  /* Core Styles */
+  /* 🎨 Core Button Styles */
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: var(--btn-background-color);
+  background-color: var(--btn-background-color); /* From JS inline style */
   font-weight: 500;
   border-radius: 3px;
   border: none;
   transition: all 0.4s ease;
   overflow: hidden;
   z-index: 1;
-  white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-   padding-left: clamp(1.5rem, 3.5vw, 2.2rem);
 }
 
-/* Hover Effect Layer */
+/* 💫 Hover Background Layer Animation */
 .btn::before {
   content: "";
   position: absolute;
@@ -34,12 +33,12 @@
   left: 0;
   width: 0;
   height: 100%;
-  background-color: var(--hover-color);
+  background-color: var(--hover-color); /* From JS inline style */
   transition: width 0.4s ease;
-  z-index: -1;
+  z-index: -1; /* Behind button content */
 }
 
-/* Arrow Icon */
+/* ➤ Icon Animation (slides in on hover) */
 .btn::after {
   content: "➤";
   position: absolute;
@@ -53,42 +52,42 @@
   z-index: 2;
 }
 
-/* Hover States */
+/* 🧠 Interaction: Hover/Focus Effects */
 .btn:hover,
 .btn:focus {
-  color: white; 
+  color: white;
 }
 
 .btn:hover::before,
 .btn:focus::before {
-  width: 100%;
+  width: 100%; /* Fill background on hover */
 }
 
 .btn:hover::after,
 .btn:focus::after {
   transform: translateX(0);
-  opacity: 1;
+  opacity: 1; /* Reveal arrow */
 }
 
-/* Mobile Optimizations */
+/* 📱 Mobile Adjustments */
 @media (max-width: 768px) {
   .btn {
-    min-width: 120px; /* Wider tap target */
+    min-width: 120px; /* Increase tap area */
     padding: 0.8rem 1.2rem;
   }
-  
+
   .btn:hover {
-    transform: none; /* Disable lift on mobile */
+    transform: none; /* Disable transform for smoother mobile UX */
   }
 }
 
-/* Accessibility */
+/* ♿ Accessibility */
 .btn:focus-visible {
   outline: 2px solid var(--hover-color);
   outline-offset: 2px;
 }
 
-/* Motion Reduction */
+/* 🤫 Respect User Motion Preferences */
 @media (prefers-reduced-motion) {
   .btn,
   .btn::before,

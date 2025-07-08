@@ -1,16 +1,17 @@
 .footer {
-  background-color: #d3d3d3;
-  color: #000;
-  padding: 40px 20px 20px;
+  background-color: #1c1c1c; /* Deep gray for professional look */
+  color: #f1f1f1;           /* Light text for contrast */
+  padding: 60px 20px 30px;
   font-family: 'Lato', sans-serif;
 }
 
 .footerContainer {
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between; ;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section {
@@ -19,68 +20,73 @@
 }
 
 h3 {
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .links {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .links li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .links a {
-  color: black;
-  text-decoration: underline;
-  transition: color 0.3s ease;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .links a:hover {
-  color: #444;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .socialIcons {
   display: flex;
-  gap: 12px;
-  margin-top: 15px;
-  font-size: 24px;
-}
-
-.socialIcons {
-  display: flex;
-  gap: 12px;
-  margin-top: 15px;
-  font-size: 24px;
+  gap: 14px;
+  margin-top: 20px;
+  font-size: 22px;
 }
 
 .socialIcons svg {
+  color: #ccc;
   transition: transform 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 
 .socialIcons svg:hover {
   transform: scale(1.2);
-  color: #1a1a1a; /* or any brand color like #0077b5 for LinkedIn etc. */
-}
-.bottom {
-  text-align: center;
-  margin-top: 1.75rem;
-  font-size: 1.75rem;
-  font-weight: 500;
+  color: var(--primary-color, #4a90e2); /* Uses your theme variable or fallback */
 }
 
-/* Responsive */
+/* Footer bottom bar */
+.bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #bbb;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive layout for smaller screens */
 @media (max-width: 768px) {
   .footerContainer {
     flex-direction: column;
     align-items: flex-start;
+    gap: 30px;
   }
 
   .bottom {
-    margin-top: 30px;
     text-align: left;
+    font-size: 0.95rem;
   }
 }

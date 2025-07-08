@@ -1,10 +1,5 @@
+/* === Scrollable Container === */
 .scrollContainer {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth scrolling on navigation */
 }
 
-.scrollContainer > * {
-  height: 100vh;
-  scroll-snap-align: start;
-}

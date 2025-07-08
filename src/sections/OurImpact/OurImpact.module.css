@@ -1,9 +1,11 @@
+/* 🌍 Section container */
 .impactSection {
   padding: 0 1.5rem;
   max-width: 1200px;
   margin: auto;
 }
 
+/* 🧷 Section heading */
 .heading {
   text-align: center;
   font-family: 'Bebas Neue', sans-serif;
@@ -11,26 +13,36 @@
   margin-bottom: 3rem;
 }
 
+/* 🧱 Grid layout for impact cards */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Stack on mobile */
   gap: 2rem;
 }
 
+/* 🪪 Each impact card */
 .card {
   background-color: #f9f9f9;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔢 Impact number */
 .number {
   font-size: 1.25rem;
   font-weight: bold;
+  color: #777;
   margin-bottom: 1rem;
 }
 
+/* 🏷️ Title text */
 .title {
   font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   font-weight: 600;
@@ -38,6 +50,7 @@
   color: #111;
 }
 
+/* 📃 Description paragraph */
 .description {
   font-size: clamp(0.95rem, 2.5vw, 1.05rem);
   line-height: 1.6;
@@ -45,8 +58,9 @@
   margin-bottom: 1rem;
 }
 
+/* 📎 PDF link style */
 .link {
-  color: #429122;
+  color: var(--primary-color, #429122); /* Fallback for safety */
   font-weight: 600;
   text-decoration: none;
 }
@@ -55,15 +69,18 @@
   text-decoration: underline;
 }
 
+/* 🔘 Optional CTA button (if used) */
 .button {
   margin: 3rem auto 0;
   display: block;
   border: none;
+  background: none;
   cursor: pointer;
 }
 
+/* 🖥️ Responsive grid on tablet and up */
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
   }
 }

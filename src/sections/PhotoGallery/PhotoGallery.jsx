@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './PhotoGallery.module.css';
 import Button from '../../components/Button/Button';
-import media_img1 from "../../assets/MediaGalleryImgs/media1.jpg";
-import media_img2 from "../../assets/MediaGalleryImgs/media2.jpg";
-import media_img3 from "../../assets/MediaGalleryImgs/media3.jpg";
-import media_img4 from "../../assets/MediaGalleryImgs/media4.jpg";
+
+// Import media images
+import media_img1 from "../../assets/MediaGalleryImgs/media1.avif";
+import media_img2 from "../../assets/MediaGalleryImgs/media2.avif";
+import media_img3 from "../../assets/MediaGalleryImgs/media3.avif";
+import media_img4 from "../../assets/MediaGalleryImgs/media4.avif";
 
 const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
   const galleryItems = [
@@ -30,7 +32,10 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
       description: 'Night view of downtown skyscrapers'
     }
   ];
+
+  // 🎨 Theme color state from CSS variables
   const [colors, setColors] = useState({ primary: '#429122', secondary: '#ABA104' });
+
   useEffect(() => {
     const rootStyles = getComputedStyle(document.documentElement);
     setColors({
@@ -39,21 +44,19 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
     });
   }, []);
 
+  // 📸 Carousel state
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState('right');
 
+  // 👉 Next/Prev slide handlers
   const nextSlide = () => {
     setDirection('right');
-    setCurrentIndex((prevIndex) =>
-      prevIndex === galleryItems.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prev) => (prev === galleryItems.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
     setDirection('left');
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? galleryItems.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? galleryItems.length - 1 : prev - 1));
   };
 
   const goToSlide = (index) => {
@@ -61,60 +64,44 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
     setCurrentIndex(index);
   };
 
+  // ⏱️ AutoPlay effect
   useEffect(() => {
     if (!autoPlay) return;
-
-    const timer = setTimeout(() => {
-      nextSlide();
-    }, interval);
-
+    const timer = setTimeout(() => nextSlide(), interval);
     return () => clearTimeout(timer);
   }, [currentIndex, autoPlay, interval]);
 
+  // 🎞️ Slide motion variants
   const slideVariants = {
-    hiddenRight: {
-      x: '100%',
-      opacity: 0,
-    },
-    hiddenLeft: {
-      x: '-100%',
-      opacity: 0,
-    },
+    hiddenRight: { x: '100%', opacity: 0 },
+    hiddenLeft: { x: '-100%', opacity: 0 },
     visible: {
-      x: '0',
+      x: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-      },
+      transition: { duration: 0.5, ease: 'easeInOut' }
     },
     exit: {
       opacity: 0,
       scale: 0.8,
-      transition: {
-        duration: 0.3,
-      },
-    },
+      transition: { duration: 0.3 }
+    }
   };
 
+  // 🎯 Thumbnail entrance animation
   const thumbnailVariants = {
-    initial: {
-      opacity: 0,
-      y: 20,
-    },
+    initial: { opacity: 0, y: 20 },
     animate: (index) => ({
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.5,
-        delay: index * 0.1,
-      },
-    }),
+      transition: { duration: 0.5, delay: index * 0.1 }
+    })
   };
 
   return (
     <div className={styles.mediaGallerySection}>
       <h2 className={styles.heading}>Photo Gallery</h2>
+
+      {/* 🖼️ Main Carousel */}
       <div className={styles.carousel}>
         <div className={styles.carouselMain}>
           <AnimatePresence mode="wait">
@@ -131,6 +118,7 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
                 alt={galleryItems[currentIndex].title}
                 className={styles.slideImage}
               />
+              {/* ⬇️ Caption */}
               {galleryItems[currentIndex].title && (
                 <motion.div
                   className={styles.slideCaption}
@@ -147,6 +135,7 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
             </motion.div>
           </AnimatePresence>
 
+          {/* ⬅️ ➡️ Navigation Buttons */}
           <button
             className={`${styles.navButton} ${styles.prevButton}`}
             onClick={prevSlide}
@@ -163,6 +152,7 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
           </button>
         </div>
 
+        {/* 🔳 Thumbnails */}
         <div className={styles.thumbnails}>
           {galleryItems.map((item, index) => (
             <motion.div
@@ -185,6 +175,7 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
           ))}
         </div>
 
+        {/* 🔘 Dot Indicators */}
         <div className={styles.dots}>
           {galleryItems.map((_, index) => (
             <motion.div
@@ -197,9 +188,15 @@ const PhotoGallery = ({ autoPlay = true, interval = 5000 }) => {
           ))}
         </div>
       </div>
-      <motion.button className={styles.button}>
-        <Button text="VIEW MORE" link ="/media" color={colors.primary} styles={{ width: "150px", height: "50px", fontSize: "0.815rem" }} />
 
+      {/* CTA Button */}
+      <motion.button className={styles.button}>
+        <Button
+          text="VIEW MORE"
+          link="/media"
+          color={colors.primary}
+          styles={{ width: "150px", height: "50px", }}
+        />
       </motion.button>
     </div>
   );
