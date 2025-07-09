@@ -1,12 +1,12 @@
-
+/* === HEADER IMAGE === */
 .headerImage {
   width: 100%;
   height: 150px;
   object-fit: cover;
-
   margin-bottom: 2rem;
 }
 
+/* === PAGE LAYOUT WRAPPER === */
 .mediaContentWrapper {
   display: flex;
   gap: 2rem;
@@ -15,6 +15,7 @@
   box-sizing: border-box;
 }
 
+/* === SIDEBAR === */
 .sidebar {
   min-width: 140px;
   display: flex;
@@ -52,28 +53,37 @@
   color: var(--primary-color);
 }
 
+/* === MAIN CONTENT AREA === */
 .content {
   flex: 1;
 }
 
+/* === IMAGE GRID (4xN dynamic) === */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
+  align-items: start; /* ensures container height fits content */
 }
 
+/* === IMAGE STYLING === */
 .imageWrapper {
+  display: block;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
 }
 
 .image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
 }
 
+/* === VIDEO SECTION === */
 .videoGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -98,7 +108,10 @@
   font-size: 1rem;
   margin-top: 0.5rem;
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
+
+/* === MODAL FOR FULL IMAGE VIEW === */
 .modal {
   position: fixed;
   top: 0;
@@ -135,6 +148,76 @@
   font-family: 'Lato', sans-serif;
 }
 
+/* === STATE CARD SELECTION === */
+.stateCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stateCard {
+  background-color: white;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0;
+}
+
+.stateCardContent {
+  display: flex;
+  height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.stateCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.stateName {
+  margin: 1rem 0 0 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  color: black;
+}
+
+.stateSubtitle {
+  font-size: 0.75rem;
+  color: gray;
+  font-family: 'Lato', sans-serif;
+  margin-top: 0.25rem;
+  margin-left: 1rem;
+}
+
+/* === BACK BUTTON === */
+.backButton {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+}
+
+.backButton:hover {
+  text-decoration: underline;
+}
+
+/* === FADE-IN ANIMATION === */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -144,8 +227,7 @@
   }
 }
 
-
-/* Responsive layout */
+/* === RESPONSIVE STYLES === */
 @media (max-width: 768px) {
   .mediaContentWrapper {
     flex-direction: column;
@@ -153,9 +235,8 @@
   }
 
   .sidebar {
-    flex-direction: column;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
     margin-bottom: 1rem;
   }
 
@@ -163,7 +244,11 @@
     flex-direction: row;
   }
 
-  .grid,
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
   .videoGrid {
     gap: 1rem;
   }

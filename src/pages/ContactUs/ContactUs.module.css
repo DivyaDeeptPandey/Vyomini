@@ -1,32 +1,50 @@
+/* ------------------ PAGE WRAPPER ------------------ */
 .pageContainer {
   background-color: #f9f9f9;
   min-height: 100vh;
 }
 
+/* ------------------ SECTION CONTAINER ------------------ */
 .contactSection {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-.mainHeading {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
+/* ------------------ HEADING WITH GREEN LINE ------------------ */
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
 
+
+.line {
+  width: 6px;
+  height: clamp(3rem, 8vw, 4rem);
+  background-color: var(--primary-color, #429122);
+  border-radius: 3px;
+}
+
+.heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 4rem);
+  color: #111;
+  margin: 0;
+}
+/* ------------------ SUB HEADING ------------------ */
 .subHeading {
   font-family: 'Lato', sans-serif;
   font-size: 1.2rem;
   color: #555;
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 1.5rem auto 3rem;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
+/* ------------------ LOCATION GRID ------------------ */
 .locationsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -34,63 +52,14 @@
   margin-bottom: 3rem;
 }
 
-.mapContainer {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.mapHeading {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-}
-
-.mapPlaceholder {
-  height: 400px;
-  background: #f0f0f0;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Lato', sans-serif;
-  color: #666;
-}
-
-.chatSection {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.chatHeading {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-}
-
-.chatText {
-  font-family: 'Lato', sans-serif;
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* ------------------ LOCATION CARD ------------------ */
 .locationCard {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border-top: 4px solid #429122;
+  border-top: 4px solid var(--primary-color, #429122);
 }
 
 .locationTitle {
@@ -117,8 +86,26 @@
 
 .locationPhone {
   font-weight: 600;
-  color: #429122;
+  color: var(--primary-color, #429122);
 }
+
+/* ------------------ MAP SECTION ------------------ */
+.mapContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mapHeading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  color: #111;
+}
+
 .mapEmbed {
   width: 100%;
   height: 400px;
@@ -131,16 +118,51 @@
   height: 100%;
   border: none;
 }
+
+/* ------------------ CHAT SECTION ------------------ */
+.chatSection {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chatHeading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.chatText {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
 @media (max-width: 768px) {
   .mainHeading {
     font-size: 2.5rem;
+    text-align: center;
   }
-  
+
+  .headingContainer {
+    justify-content: center;
+    flex-direction: row;
+  }
+
   .subHeading {
     font-size: 1rem;
   }
-  
-  .mapPlaceholder {
+
+  .mapEmbed {
     height: 300px;
   }
 }

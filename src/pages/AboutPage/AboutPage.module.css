@@ -1,53 +1,88 @@
-
-
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 4rem;
   font-family: 'Lato', sans-serif;
   color: #222;
+  line-height: 1.7;
 }
 
 .heading {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(3rem, 6vw, 4rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  color: #111;
 }
 
 .content {
   font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  text-align: justify;
+  padding: 1rem 1rem;
+  background: #f9f9f9;
+  border-left: 4px solid var(--primary-color, #429122);
+  padding-left: 1.5rem;
+  border-radius: 6px;
 }
 
 .highlight {
   font-weight: bold;
-  color: #000;
+  color: var(--primary-color, #429122);
 }
 
 .links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem;
   font-size: 1rem;
+  background-color: #f4f4f4;
+  padding: 2rem 1rem;
+  border-radius: 8px;
 }
 
 .links h4 {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: #111;
+  border-bottom: 2px solid var(--primary-color, #429122);
+  display: inline-block;
+  padding-bottom: 4px;
 }
 
 .links div {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
+
 .links a {
   position: relative;
-  display: inline;
+  display: inline-block;
   color: #0056b3;
   text-decoration: none;
-  margin-bottom: 0.4rem;
+  font-weight: 500;
   transition: color 0.3s ease;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color, #429122);
+  transition: width 0.3s ease;
+}
+
+.links a:hover {
+  color: #003d80;
+}
+
+.links a:hover::after {
+  width: 100%;
 }
