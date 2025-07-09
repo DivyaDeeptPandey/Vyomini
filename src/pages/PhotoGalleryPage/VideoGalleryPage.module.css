@@ -1,37 +1,61 @@
+/* === Container Styling === */
 .videoContainer {
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* === Section Heading === */
 .heading {
   font-size: clamp(2.5rem, 6vw, 3rem);
   font-family: 'Bebas Neue', sans-serif;
   text-align: center;
   margin-bottom: 2rem;
-  color: #111;
+  color: #111; /* dark, visible text */
 }
 
+/* === Video Grid Layout === */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  align-items: start; /* prevents row stretching due to taller items */
 }
 
+/* === Wrapper for Each Video === */
 .videoWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* === Embedded YouTube Video === */
 .video {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   border: none;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* === Caption Under Video === */
 .caption {
   margin-top: 0.5rem;
   font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
   text-align: center;
+  color: #333;
+}
+
+/* === Responsive Adjustments (Optional) === */
+@media (max-width: 600px) {
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
 }

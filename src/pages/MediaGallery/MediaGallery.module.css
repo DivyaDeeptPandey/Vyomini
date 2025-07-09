@@ -1,3 +1,4 @@
+/* === Container for the whole media gallery page === */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -5,12 +6,33 @@
   text-align: center;
 }
 
+/* === Heading wrapper with green vertical line to the left === */
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+/* === Thin green vertical line === */
+.headingLine {
+  width: 5px;
+  height: 3.5rem;
+  background-color: #429122; /* same green as your theme */
+  border-radius: 3px;
+}
+
+/* === Main title === */
 .title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 4rem;
-  margin-bottom: 1rem;
+  margin: 0;
+  line-height: 1;
+  text-align: left;
 }
 
+/* === Subtitle under the heading === */
 .subtitle {
   font-family: 'Lato', sans-serif;
   font-size: 1.2rem;
@@ -22,6 +44,7 @@
   line-height: 1.6;
 }
 
+/* === Grid layout for press cards === */
 .galleryGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -29,15 +52,27 @@
   margin-top: 2rem;
 }
 
+/* === Responsive adjustments for mobile screens === */
 @media (max-width: 768px) {
+  .headingContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .headingLine {
+    height: 4px;
+    width: 80px;
+  }
+
   .title {
     font-size: 3rem;
+    text-align: center;
   }
-  
+
   .subtitle {
     font-size: 1rem;
   }
-  
+
   .galleryGrid {
     grid-template-columns: 1fr;
   }

@@ -1,3 +1,7 @@
+// CampusConnectPage.jsx
+// This component displays a carousel/gallery of images with motion animations
+// showcasing Vyomini's Campus Connect initiative
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './CampusConnectPage.module.css';
@@ -5,6 +9,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 
+// Importing gallery images
 import campusImg1 from "../../assets/CampusConnectImgs/campus_connect_img1.jpg";
 import campusImg2 from "../../assets/CampusConnectImgs/campus_connect_img2.jpg";
 import campusImg3 from "../../assets/CampusConnectImgs/campus_connect_img3.jpeg";
@@ -13,6 +18,7 @@ import campusImg5 from "../../assets/CampusConnectImgs/campus_connect_img5.jpeg"
 import campusImg6 from "../../assets/CampusConnectImgs/campus_connect_img6.jpeg";
 
 export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) {
+    // Array of gallery items to be shown in carousel
     const galleryItems = [
         {
             image: campusImg1,
@@ -46,6 +52,7 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
         }
     ];
 
+    // For theme consistency from CSS variables
     const [colors, setColors] = useState({ primary: '#429122', secondary: '#ABA104' });
 
     useEffect(() => {
@@ -56,9 +63,11 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
         });
     }, []);
 
+    // Carousel state
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState('right');
 
+    // Move to next slide
     const nextSlide = () => {
         setDirection('right');
         setCurrentIndex((prevIndex) =>
@@ -66,6 +75,7 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
         );
     };
 
+    // Move to previous slide
     const prevSlide = () => {
         setDirection('left');
         setCurrentIndex((prevIndex) =>
@@ -73,17 +83,20 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
         );
     };
 
+    // Navigate directly to a slide
     const goToSlide = (index) => {
         setDirection(index > currentIndex ? 'right' : 'left');
         setCurrentIndex(index);
     };
 
+    // Auto play effect
     useEffect(() => {
         if (!autoPlay) return;
         const timer = setTimeout(() => nextSlide(), interval);
         return () => clearTimeout(timer);
     }, [currentIndex, autoPlay, interval]);
 
+    // Animation variants for slides
     const slideVariants = {
         hiddenRight: { x: '100%', opacity: 0 },
         hiddenLeft: { x: '-100%', opacity: 0 },
@@ -99,6 +112,7 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
         },
     };
 
+    // Animation for thumbnail entry
     const thumbnailVariants = {
         initial: { opacity: 0, y: 20 },
         animate: (index) => ({
@@ -111,10 +125,15 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
     return (
         <>
             <NavBar />
-            <div className={styles.mediaGallerySection}>
-                <h2 className={styles.heading}>Campus Connect</h2>
-                <div className={styles.carousel}>
-                    <div className={styles.carouselMain}>
+            <main className={styles.mediaGallerySection}>
+                <div className={styles.headingContainer}>
+                    <div className={styles.line}></div>
+                    <h2 className={styles.heading}>CAMPUS CONNECT</h2>
+                </div>
+
+                {/* Carousel Section */}
+                <section className={styles.carousel} aria-label="Campus Connect Carousel">
+                    <div className={styles.carouselMain} aria-live="polite">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentIndex}
@@ -124,27 +143,27 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
                                 animate="visible"
                                 exit="exit"
                             >
-                                <img
-                                    src={galleryItems[currentIndex].image}
-                                    alt={galleryItems[currentIndex].title}
-                                    className={styles.slideImage}
-                                />
-                                {galleryItems[currentIndex].title && (
-                                    <motion.div
+                                <figure>
+                                    <img
+                                        src={galleryItems[currentIndex].image}
+                                        alt={galleryItems[currentIndex].title}
+                                        className={styles.slideImage}
+                                    />
+                                    {/* Caption for current slide */}
+                                    <motion.figcaption
                                         className={styles.slideCaption}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.3, duration: 0.5 }}
                                     >
                                         <h3>{galleryItems[currentIndex].title}</h3>
-                                        {galleryItems[currentIndex].description && (
-                                            <p>{galleryItems[currentIndex].description}</p>
-                                        )}
-                                    </motion.div>
-                                )}
+                                        <p>{galleryItems[currentIndex].description}</p>
+                                    </motion.figcaption>
+                                </figure>
                             </motion.div>
                         </AnimatePresence>
 
+                        {/* Navigation Buttons */}
                         <button
                             className={`${styles.navButton} ${styles.prevButton}`}
                             onClick={prevSlide}
@@ -161,6 +180,7 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
                         </button>
                     </div>
 
+                    {/* Thumbnails */}
                     <div className={styles.thumbnails}>
                         {galleryItems.map((item, index) => (
                             <motion.div
@@ -183,6 +203,7 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
                         ))}
                     </div>
 
+                    {/* Navigation dots */}
                     <div className={styles.dots}>
                         {galleryItems.map((_, index) => (
                             <motion.div
@@ -194,14 +215,18 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
                             />
                         ))}
                     </div>
-                </div>
-                <p className={styles.description}>
-                    Campus Connect is Vyomini’s youth-centric initiative that bridges awareness and action. Through engaging seminars, interactive workshops, and student-led campaigns across colleges and universities, we aim to spark meaningful conversations around health, hygiene, and empowerment.
-                    <br /><br />
-                    By fostering leadership and social responsibility among students, Campus Connect transforms educational institutions into powerful platforms for change — encouraging young minds to champion causes that impact their communities.
-                </p>
+                </section>
 
-            </div>
+                {/* Description Paragraph */}
+                <section className={styles.content}>
+                    <p>
+                        <strong>Campus Connect</strong> is Vyomini’s youth-centric initiative that bridges awareness and action. Through engaging seminars, interactive workshops, and student-led campaigns across colleges and universities, we aim to spark meaningful conversations around health, hygiene, and empowerment.
+                    </p>
+                    <p>
+                        By fostering leadership and social responsibility among students, Campus Connect transforms educational institutions into powerful platforms for change — encouraging young minds to champion causes that impact their communities.
+                    </p>
+                </section>
+            </main>
             <Footer />
         </>
     );

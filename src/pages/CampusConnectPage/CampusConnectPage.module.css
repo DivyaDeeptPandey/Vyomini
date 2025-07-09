@@ -1,26 +1,60 @@
 .mediaGallerySection {
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   width: 100%;
+  font-family: 'Lato', sans-serif;
 }
-.heading {
-  text-align: center;
-  font-size: clamp(3rem, 8vw, 4rem);
-  font-family: 'Bebas Neue', sans-serif;
+
+/* Heading with green vertical line on the left */
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ensures the whole group is centered */
+  gap: 1rem;
   margin-bottom: 3rem;
-  color: #111;
 }
+
+.line {
+  width: 6px;
+  height: clamp(3rem, 8vw, 4rem);
+  background-color: var(--primary-color, #429122);
+  border-radius: 3px;
+}
+
+.heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 4rem);
+  color: #111;
+  margin: 0;
+}
+.content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  padding: 1rem 1rem;
+  background: #f9f9f9;
+  border-left: 4px solid var(--primary-color, #429122);
+  padding-left: 1.5rem;
+  border-radius: 6px;
+  max-width: 1000px;
+  margin: 3rem auto 4rem;
+  font-family: 'Lato', sans-serif;
+  color: #222;
+}
+
+/* Carousel styling */
 .carousel {
   width: 100%;
-  max-width: 800px; /* Reduced from 1200px */
+  max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
 .carouselMain {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
@@ -61,6 +95,7 @@
   opacity: 0.9;
 }
 
+/* Navigation buttons */
 .navButton {
   position: absolute;
   top: 50%;
@@ -93,6 +128,7 @@
   right: 20px;
 }
 
+/* Thumbnail row styling */
 .thumbnails {
   display: flex;
   gap: 10px;
@@ -131,6 +167,7 @@
   object-fit: cover;
 }
 
+/* Dot navigation styling */
 .dots {
   display: flex;
   justify-content: center;
@@ -150,27 +187,21 @@
   background-color: #4a90e2;
   transform: scale(1.2);
 }
-.button {
-  margin: 3rem auto 0;
-  display: block;
-  border: none;
-  cursor: pointer;
-}
+
+/* Description below carousel */
 .description {
-  max-width: 800px;
-  margin: 2rem auto;
+  max-width: 900px;
+  margin: 3rem auto 0;
   text-align: center;
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.7;
   color: #333;
-  padding: 0 1rem;
 }
-
 
 /* Responsive styles */
 @media (max-width: 768px) {
   .carouselMain {
-    aspect-ratio: 4/3;
+    aspect-ratio: 4 / 3;
   }
 
   .slideCaption {
@@ -195,11 +226,16 @@
     flex: 0 0 60px;
     height: 45px;
   }
+
+  .description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .carouselMain {
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
   }
 
   .thumbnails {

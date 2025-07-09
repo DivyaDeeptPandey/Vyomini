@@ -3,7 +3,10 @@ import styles from "./MediaGallery.module.css";
 import NavBar from "../../components/NavBar/NavBar";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Header image
 import headerImg from "../../assets/PhotoGalleryImgs/header.jpg";
+
+// Import all gallery images
 import img1 from "../../assets/PhotoGalleryImgs/img1.jpg";
 import img2 from "../../assets/PhotoGalleryImgs/img2.jpg";
 import img3 from "../../assets/PhotoGalleryImgs/img3.jpg";
@@ -21,25 +24,44 @@ import img14 from "../../assets/PhotoGalleryImgs/img14.jpg";
 import img15 from "../../assets/PhotoGalleryImgs/img15.jpg";
 import img16 from "../../assets/PhotoGalleryImgs/img16.jpg";
 
-const images = [
-  { src: img1, alt: "Event 1" },
-  { src: img2, alt: "Event 2" },
-  { src: img3, alt: "Event 3" },
-  { src: img4, alt: "Event 4" },
-  { src: img5, alt: "Event 5" },
-  { src: img6, alt: "Event 6" },
-  { src: img7, alt: "Event 7" },
-  { src: img8, alt: "Event 8" },
-  { src: img9, alt: "Event 9" },
-  { src: img10, alt: "Event 10" },
-  { src: img11, alt: "Event 11" },
-  { src: img12, alt: "Event 12" },
-  { src: img13, alt: "Event 13" },
-  { src: img14, alt: "Event 14" },
-  { src: img15, alt: "Event 15" },
-  { src: img16, alt: "Event 16" },
-];
+// Images grouped by state
+const stateImages = {
+  Delhi: [
+    { src: img1, alt: "Delhi Event 1" },
+    { src: img2, alt: "Delhi Event 2" },
+    { src: img3, alt: "Delhi Event 3" },
+    { src: img4, alt: "Delhi Event 4" },
+    { src: img5, alt: "Delhi Event 5" },
+    { src: img6, alt: "Delhi Event 6" },
+    { src: img7, alt: "Delhi Event 7" },
+    { src: img8, alt: "Delhi Event 8" },
+    { src: img9, alt: "Delhi Event 9" },
+    { src: img10, alt: "Delhi Event 10" },
+    { src: img11, alt: "Delhi Event 11" },
+  ],
+  "Uttar Pradesh": [
+    { src: img3, alt: "UP Event 1" },
+    { src: img4, alt: "UP Event 2" },
+    { src: img5, alt: "UP Event 3" },
+    { src: img6, alt: "UP Event 4" },
+    { src: img7, alt: "UP Event 5" },
+    { src: img8, alt: "UP Event 6" },
+    { src: img9, alt: "UP Event 7" },
+    { src: img10, alt: "UP Event 8" },
+    { src: img11, alt: "UP Event 9" },
+    { src: img12, alt: "UP Event 10" },
+    { src: img13, alt: "UP Event 11" },
+    { src: img14, alt: "UP Event 12" },
+    { src: img15, alt: "UP Event 13" },
+    { src: img16, alt: "UP Event 14" },
+  ],
+  Rajasthan: [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+};
 
+// Sample YouTube videos
 const videos = [
   {
     title: "Empowerment Workshop",
@@ -52,8 +74,11 @@ const videos = [
 ];
 
 export default function MediaGallery() {
-  const [activeTab, setActiveTab] = useState("photos");
-  const [modalImage, setModalImage] = useState(null);
+  const [activeTab, setActiveTab] = useState("photos"); // 'photos' or 'videos'
+  const [selectedState, setSelectedState] = useState(null); // current state name
+  const [modalImage, setModalImage] = useState(null); // currently enlarged image
+
+  const handleBack = () => setSelectedState(null); // back to state cards
 
   return (
     <>
@@ -61,53 +86,87 @@ export default function MediaGallery() {
       <img src={headerImg} alt="Media Banner" className={styles.headerImage} />
 
       <div className={styles.mediaContentWrapper}>
+        {/* Sidebar */}
         <aside className={styles.sidebar}>
           <h2 className={styles.heading}>Media</h2>
           <div className={styles.links}>
             <span
-              className={`${styles.link} ${
-                activeTab === "photos" ? styles.active : ""
-              }`}
-              onClick={() => setActiveTab("photos")}
+              className={`${styles.link} ${activeTab === "photos" ? styles.active : ""}`}
+              onClick={() => {
+                setActiveTab("photos");
+                setSelectedState(null);
+              }}
             >
               PHOTOS
             </span>
             <span
-              className={`${styles.link} ${
-                activeTab === "videos" ? styles.active : ""
-              }`}
-              onClick={() => setActiveTab("videos")}
+              className={`${styles.link} ${activeTab === "videos" ? styles.active : ""}`}
+              onClick={() => {
+                setActiveTab("videos");
+                setSelectedState(null);
+              }}
             >
               VIDEOS
             </span>
           </div>
         </aside>
 
+        {/* Main content */}
         <main className={styles.content}>
           <AnimatePresence mode="wait">
             {activeTab === "photos" ? (
               <motion.div
                 key="photos"
-                className={styles.grid}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {images.map((img, index) => (
-                  <motion.div
-                    key={index}
-                    className={styles.imageWrapper}
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    onClick={() => setModalImage(img)}
-                  >
-                    <img loading="lazy" src={img.src} alt={img.alt} className={styles.image} />
-                    <p className={styles.caption}>{img.alt}</p>
-                  </motion.div>
-                ))}
+                {/* State selection view */}
+                {!selectedState ? (
+                  <div className={styles.stateCardGrid}>
+                    {Object.keys(stateImages).map((state) => (
+                      <div
+                        key={state}
+                        className={styles.stateCard}
+                        onClick={() => setSelectedState(state)}
+                      >
+                        <div className={styles.stateCardContent}>
+                          <h3 className={styles.stateName}>{state}</h3>
+                          <p className={styles.stateSubtitle}>Click to view images</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  // Image grid for selected state
+                  <>
+                    <button onClick={handleBack} className={styles.backButton}>
+                      ← Back to States
+                    </button>
+                    <div className={styles.grid}>
+                      {stateImages[selectedState].map((img, index) => (
+                        <motion.div
+                          key={index}
+                          className={styles.imageWrapper}
+                          whileHover={{ scale: 1.03 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                          onClick={() => setModalImage(img)}
+                        >
+                          <img
+                            loading="lazy"
+                            src={img.src}
+                            alt={img.alt}
+                            className={styles.image}
+                          />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </>
+                )}
               </motion.div>
             ) : (
+              // Videos view
               <motion.div
                 key="videos"
                 className={styles.videoGrid}
@@ -137,6 +196,8 @@ export default function MediaGallery() {
           </AnimatePresence>
         </main>
       </div>
+
+      {/* Image modal viewer */}
       {modalImage && (
         <div className={styles.modal} onClick={() => setModalImage(null)}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
