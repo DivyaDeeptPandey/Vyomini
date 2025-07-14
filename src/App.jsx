@@ -15,7 +15,8 @@ const ContactUs = lazy(() => import('./pages/ContactUs/ContactUs'));
 const RuralOutreachProgram = lazy(() => import('./pages/RuralOutreachProgramPage/RuralOutreachProgramPage'));
 const CampusConnectPage = lazy(() => import('./pages/CampusConnectPage/CampusConnectPage'));
 const VyominiUdhyamiPage = lazy(() => import('./pages/VyominiUdhyamiPage/VyominiUdhyamiPage'));
-const MediaGalleryPage = lazy(() => import('./pages/PhotoGalleryPage/MediaGallery')); // Might be duplicate — double-check usage
+const MediaGalleryPage = lazy(() => import('./pages/PhotoGalleryPage/MediaGallery'));
+const DonatePage = lazy(() => import('./pages/DonationPage/DonationPage'));
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
           <Route path="/work-with-us" element={<WorkWithUs />} />
           <Route path="/media-gallery" element={<MediaGallery />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/media" element={<MediaGalleryPage />} /> {/* Consider removing if duplicate */}
+          <Route path="/media" element={<MediaGalleryPage />} />
+          <Route path="/donate" element={<DonatePage />} />
         </Routes>
       </Suspense>
     </Router>

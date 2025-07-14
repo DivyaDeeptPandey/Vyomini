@@ -33,9 +33,13 @@ export default function NavBar() {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <span
-              className={`${styles.dropdownTrigger} ${
-                pathname.startsWith('/menstrual-health-program') ? styles.active : ''
-              }`}
+              className={`${styles.dropdownTrigger} ${pathname.startsWith('/menstrual-health-program') ||
+                  pathname.startsWith('/campus-connect-program') ||
+                  pathname.startsWith('/rural-outreach-program') ||
+                  pathname.startsWith('/vyomini-udhyami-consortium')
+                  ? styles.active
+                  : ''
+                }`}
             >
               Programs
             </span>

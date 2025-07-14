@@ -38,8 +38,8 @@ const Footer = () => {
         <div className={styles.section}>
           <h3 className={styles.sectionTitle}>Legal</h3>
           <ul className={styles.links}>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms & Conditions</a></li>
+            <a href="/Privacy_Policy.pdf" target="_blank" rel="noopener noreferrer">Privacy Policy</a><br />
+            <a href="/Terms_of_Service.pdf" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
           </ul>
         </div>
       </div>

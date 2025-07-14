@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import ruralOutreachImg from "../../assets/RuralOutreachProgramImgs/Rural_Outreach_Program_Img.jpg";
 
-// Animation variants
+// Animation configuration for container
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -16,6 +16,7 @@ const containerVariants = {
   }
 };
 
+// Animation for each item
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -31,24 +32,24 @@ const itemVariants = {
 export default function RuralOutreachProgram() {
   return (
     <div>
+      {/* Navigation Bar */}
       <NavBar />
+
+      {/* Main Section */}
       <motion.section
         className={styles.container}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <motion.h2
-          className={styles.heading}
-          variants={itemVariants}
-        >
-          RURAL OUTREACH PROGRAM
-        </motion.h2>
+        {/* Section Heading */}
+        <div className={styles.headingContainer}>
+          <div className={styles.line}></div>
+          <h2 className={styles.heading}>RURAL OUTREACH PROGRAM</h2>
+        </div>
 
-        <motion.div
-          className={styles.imageWrapper}
-          variants={itemVariants}
-        >
+        {/* Featured Image */}
+        <motion.div className={styles.imageWrapper} variants={itemVariants}>
           <img
             src={ruralOutreachImg}
             alt="Rural Outreach Program"
@@ -56,24 +57,27 @@ export default function RuralOutreachProgram() {
           />
         </motion.div>
 
-        <motion.div
-          className={styles.content}
-          variants={containerVariants}
-        >
+        {/* Paragraphs with animation */}
+        <motion.div className={styles.content} variants={containerVariants}>
           <motion.p variants={itemVariants}>
-
-            INDIA is a country where majority of population(68.84%) still lives in Rural set up, there are 6,40,867 villages in INDIA and as the research suggests that awareness, accessibility and affordability of resources is a big challenge for population living in villages.          </motion.p>
+            India is a country where a majority of the population (68.84%) still lives in rural areas. With over 6,40,000 villages, awareness, accessibility, and affordability of essential resources remain significant challenges.
+          </motion.p>
 
           <motion.p variants={itemVariants}>
-            Therefore VYOMINI taken the initiative to cover all villages for the Menstrual Health Awareness, affordability & accessibility.          </motion.p>
+            VYOMINI has taken the initiative to address this gap by expanding menstrual health awareness, product accessibility, and affordability across Indian villages.
+          </motion.p>
 
           <motion.p variants={itemVariants}>
-            In order to penetrate deeper into the rural and remote areas of India, we have actively associated ourselves with multiple block development groups, NGOs and Self-Help groups under National Rural Livelihood Mission GoI, and other grassroots level organizations.          </motion.p>
+            To penetrate deeper into remote areas, we’ve partnered with block development offices, NGOs, Self-Help Groups (SHGs) under the National Rural Livelihood Mission (NRLM), and other grassroots organizations.
+          </motion.p>
 
           <motion.p variants={itemVariants}>
-            We have already held awareness workshops in the villages of Haryana, Odisha, Rajasthan, Jharkhand, Bihar, Uttrakhand, Uttar Pardesh and hope to reach at least 15 more Indian states in 2018 alone.          </motion.p>
+            Our awareness workshops have already reached villages across Haryana, Odisha, Rajasthan, Jharkhand, Bihar, Uttarakhand, and Uttar Pradesh — with a goal to impact 15 more states.
+          </motion.p>
         </motion.div>
       </motion.section>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

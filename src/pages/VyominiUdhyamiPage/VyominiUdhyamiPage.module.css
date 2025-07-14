@@ -7,57 +7,96 @@
   text-align: center;
 }
 
-.heading {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(3rem, 6vw, 4rem);
+/* Page heading */
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   margin-bottom: 2rem;
-  color: #111;
 }
-
+.line{
+  width: 4px;
+  height: 50px;
+  background-color: var(--primary-color, #429122); /* Green color */
+  border-radius: 2px;
+}
+.heading{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: #111;
+  margin: 0;
+  text-transform: uppercase;
+  position: relative;
+}
+/* Image banner */
 .image {
   width: 100%;
-  max-width: 600px;
+  height: 400px;
+  max-width: 650px;
   margin: 0 auto 2rem auto;
   display: block;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  padding: 0 1rem;
+/* Wrapper for description with green bar */
+.descriptionBox {
+  background-color: #f9f9f9;
+  border-left: 6px solid var(--primary-color, #429122);
+  padding: 1.5rem 1.5rem;
+  margin: 2rem auto;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
 }
 
+
+/* Description text */
+.description {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Green highlight text */
 .highlight {
-  color: var(--primary-color);
+  color: var(--primary-color, #429122);
   font-weight: 700;
 }
 
+/* Subheading above benefits list */
 .subheading {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
   color: #444;
+  text-align: left;
+  padding-left: 1.2rem;
 }
 
+/* Benefits list */
 .benefits {
   list-style-type: disc;
   text-align: left;
   max-width: 700px;
   margin: 0 auto 2rem auto;
-  padding-left: 1.5rem;
-  font-size: 1.05rem;
+  padding-left: 2rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   line-height: 1.7;
+  color: #444;
 }
 
+/* CTA Button wrapper */
 .formLinkWrapper {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
+/* Optional: in case you use anchor instead of <Button /> component */
 .formLink {
   display: inline-block;
   padding: 0.75rem 1.5rem;
