@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from './CampusConnectPage.module.css';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
-import Button from '../../components/Button/Button';
 
 // Importing gallery images
 import campusImg1 from "../../assets/CampusConnectImgs/campus_connect_img1.jpg";
@@ -16,6 +15,30 @@ import campusImg3 from "../../assets/CampusConnectImgs/campus_connect_img3.jpeg"
 import campusImg4 from "../../assets/CampusConnectImgs/campus_connect_img4.jpeg";
 import campusImg5 from "../../assets/CampusConnectImgs/campus_connect_img5.jpeg";
 import campusImg6 from "../../assets/CampusConnectImgs/campus_connect_img6.jpeg";
+
+// === Animation Variants for Section + Items ===
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            when: 'beforeChildren',
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+            ease: 'easeOut',
+        },
+    },
+};
 
 export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) {
     // Array of gallery items to be shown in carousel
@@ -126,12 +149,20 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
         <>
             <NavBar />
             <main className={styles.mediaGallerySection}>
-                <div className={styles.headingContainer}>
-                    <div className={styles.line}></div>
-                    <h2 className={styles.heading}>CAMPUS CONNECT</h2>
-                </div>
+                {/* === Page Heading with Green Line === */}
+                <motion.div
+                    className={styles.headingContainer}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <motion.div className={styles.line} variants={itemVariants}></motion.div>
+                    <motion.h2 className={styles.heading} variants={itemVariants}>
+                        CAMPUS CONNECT
+                    </motion.h2>
+                </motion.div>
 
-                {/* Carousel Section */}
+                {/* === Carousel Section === */}
                 <section className={styles.carousel} aria-label="Campus Connect Carousel">
                     <div className={styles.carouselMain} aria-live="polite">
                         <AnimatePresence mode="wait">
@@ -217,15 +248,24 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
                     </div>
                 </section>
 
-                {/* Description Paragraph */}
-                <section className={styles.content}>
-                    <p>
-                        <strong>Campus Connect</strong> is Vyomini’s youth-centric initiative that bridges awareness and action. Through engaging seminars, interactive workshops, and student-led campaigns across colleges and universities, we aim to spark meaningful conversations around health, hygiene, and empowerment.
-                    </p>
-                    <p>
-                        By fostering leadership and social responsibility among students, Campus Connect transforms educational institutions into powerful platforms for change — encouraging young minds to champion causes that impact their communities.
-                    </p>
-                </section>
+                {/* === Description Paragraph === */}
+                <motion.section
+                    className={styles.content}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <motion.p variants={itemVariants}>
+                        <strong>Campus Connect</strong> is Vyomini’s youth-centric initiative that bridges awareness and action.
+                        Through engaging seminars, interactive workshops, and student-led campaigns across colleges and universities,
+                        we aim to spark meaningful conversations around health, hygiene, and empowerment.
+                    </motion.p>
+                    <motion.p variants={itemVariants}>
+                        By fostering leadership and social responsibility among students, Campus Connect transforms educational
+                        institutions into powerful platforms for change — encouraging young minds to champion causes that impact
+                        their communities.
+                    </motion.p>
+                </motion.section>
             </main>
             <Footer />
         </>

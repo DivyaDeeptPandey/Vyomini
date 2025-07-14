@@ -84,8 +84,8 @@ const AboutSection = () => {
 
           <div>
             <h4>Bank Details</h4>
-            <a href="javascript:void(0)">FCRA</a>
-            <a href="javascript:void(0)">Domestic</a>
+            <a href="/donate">FCRA</a>
+            <a href="/donate">Domestic</a>
           </div>
 
           <div>

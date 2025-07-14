@@ -24,6 +24,7 @@ import rkImg from '../../assets/Advisory/r.k_chandra.jpg';
 import manvendraImg from '../../assets/Advisory/manvendra_yadav.jpg';
 
 // === Animation Variants ===
+// === Animation Variants ===
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -48,22 +49,22 @@ const headingVariants = {
   },
 };
 
-const memberVariants = {
-  hidden: { x: -50, opacity: 0 },
-  visible: (i) => ({
-    x: 0,
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
     opacity: 1,
     transition: {
-      delay: i * 0.15,
       duration: 0.6,
       ease: 'easeOut',
     },
-  }),
+  },
   hover: {
     y: -5,
     transition: { duration: 0.2 },
   },
 };
+
 
 // === Component Function ===
 const TeamPage = () => {
@@ -136,7 +137,7 @@ const TeamPage = () => {
         {teamMembers.map((member, i) => (
           <motion.div
             key={member.name}
-            variants={memberVariants}
+            variants={itemVariants}
             custom={i}
             whileHover="hover"
             className={styles.memberBox}
@@ -162,7 +163,7 @@ const TeamPage = () => {
             <motion.li
               key={member.name}
               className={styles.advisoryCard}
-              variants={memberVariants}
+              variants={itemVariants}
               custom={i}
               whileHover="hover"
             >
