@@ -27,7 +27,7 @@ const ProgramSection = () => {
   // 🧩 All program cards
   const programs = [
     {
-      title: "Menstrual Health Management",
+      title: "Development Project implementation",
       description:
         'As the statistics suggests the status of Menstrual Health is poor across culture & communities. We have launched "Rakshak" — a low cost biodegradable sanitary pad with a campaign to address Menstrual Health Management related issues.',
       image: img1,
@@ -35,7 +35,7 @@ const ProgramSection = () => {
       buttonColor: colors.primary,
     },
     {
-      title: "Rural Outreach",
+      title: "Entrepreneurship Development Training",
       description:
         "To penetrate deeper into rural and remote areas, we actively associate with block development groups, NGOs, SHGs under NRLM, and grassroots organizations.",
       image: img2,
@@ -44,7 +44,7 @@ const ProgramSection = () => {
       buttonColor: colors.secondary,
     },
     {
-      title: "Campus Connect",
+      title: "Menstrual Hygiene awareness workshop and hardware installation",
       description:
         "Vyomini partners with educational institutions for change via workshops, research, and capacity-building. We promote leadership and sustainable menstrual health education.",
       image: img3,
@@ -52,13 +52,21 @@ const ProgramSection = () => {
       buttonColor: colors.primary,
     },
     {
-      title: "Vyomini Udhyami Consortium",
+      title: "Youth Empowerment Events",
       description:
         "Empowering aspiring entrepreneurs with training, legal guidance, financial literacy, and marketing access — all for just ₹500/year to support sustainable ventures.",
       image: img4,
       reverse: true,
       buttonLink: "/vyomini-udhyami-consortium",
       buttonColor: colors.secondary,
+    },
+    {
+      title: "NGOs capacity building programs",
+      description:
+        "Empowering aspiring entrepreneurs with training, legal guidance, financial literacy, and marketing access — all for just ₹500/year to support sustainable ventures.",
+      image: img4,
+      buttonLink: "/vyomini-udhyami-consortium",
+      buttonColor: colors.primary,
     },
   ];
 

@@ -1,11 +1,6 @@
-import { useState } from 'react';
 import styles from './PressCard.module.css';
 
-const PressCard = ({ title, excerpt, links, logo }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => setIsOpen(!isOpen);
-
+const PressCard = ({ title, excerpt, logo, link, publishedDate }) => {
   return (
     <div className={styles.card}>
       <div className={styles.header}>
@@ -13,19 +8,16 @@ const PressCard = ({ title, excerpt, links, logo }) => {
         <img src={logo} alt={title} className={styles.logo} />
       </div>
       <p className={styles.pressExcerpt}>{excerpt}</p>
-
-      <button className={styles.dropdownButton} onClick={toggleDropdown}>
-        {isOpen ? 'Hide Links ▲' : 'View Articles ▼'}
-      </button>
-
-      {isOpen && (
-        <div className={styles.linksList}>
-          {links.map((item, index) => (
-            <a key={index} href={item.href} className={styles.link} target="_blank" rel="noopener noreferrer">
-              {item.label}
-            </a>
-          ))}
-        </div>
+      <a
+        href={link}
+        className={styles.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read Full Article →
+      </a>
+      {publishedDate && (
+        <p className={styles.date}>{new Date(publishedDate).toLocaleDateString()}</p>
       )}
     </div>
   );

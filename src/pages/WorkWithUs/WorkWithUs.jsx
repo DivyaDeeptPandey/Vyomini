@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './WorkWithUs.module.css';
 import InternshipCard from './InternshipCard';
 import VolunteerCard from './VolunteerCard';
+import JobApply from './JobApply';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 
@@ -46,6 +47,7 @@ const WorkWithUs = () => {
       <div className={styles.cardsContainer}>
         <InternshipCard />
         <VolunteerCard />
+        <JobApply />
       </div>
     </motion.div>
     <Footer />

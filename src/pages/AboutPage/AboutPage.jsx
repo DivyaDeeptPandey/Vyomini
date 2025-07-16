@@ -70,7 +70,15 @@ const AboutSection = () => {
           transition={{ delay: 0.5, duration: 0.6 }}
         >
           <div>
-            <h4>Annual Reports</h4>
+            <motion.a
+              href="/ANNUAL_REPORT_VYOMINI.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.reportHeadingLink} ${styles.noUnderline}`}
+              whileHover={{ scale: 1.05 }}
+            >
+              <h4>Annual Reports</h4>
+            </motion.a>
             <a href="/Brief_Profile.pdf" target="_blank" rel="noopener noreferrer">Brief Profile</a>
             <a href="/Project_Report.pdf" target="_blank" rel="noopener noreferrer">Project Report</a>
             <a href="/MHM_Report.pdf" target="_blank" rel="noopener noreferrer">MHM Report</a>

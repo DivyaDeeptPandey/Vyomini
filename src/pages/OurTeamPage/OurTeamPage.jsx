@@ -77,12 +77,6 @@ const TeamPage = () => {
       about: 'Prachi Kaushik is the Founder & Director of VYOMINI SOCIAL FOUNDATION (VSF), based in Delhi, India. She founded VYOMINI to build a robust ecosystem for women-led entrepreneurship in high-impact sectors such as clean energy, agriculture, health, and sanitation.',
     },
     {
-      image: sangeetaImg,
-      name: 'Sangeeta Panda',
-      designation: 'IT Professional - Senior Leader',
-      about: 'Sangeeta’s leadership in both corporate and rural spaces, alongside her passion for languages and listening to marginalized voices, makes her a powerful force for grassroots change.',
-    },
-    {
       image: bhagyashreeImg,
       name: 'Bhagyashree Sagar',
       designation: 'Communication Professional',
@@ -96,7 +90,7 @@ const TeamPage = () => {
     },
     {
       image: sheetalImg,
-      name: 'Sheetal Sharma',
+      name: 'Naresh Kaushik',
       designation: 'Project Manager – Delhi',
       about: 'Mrs. Sheetal manages operations in Delhi and leads a large team of women entrepreneurs. She holds a degree in Education.',
     },

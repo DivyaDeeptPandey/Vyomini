@@ -26,7 +26,7 @@ import img16 from "../../assets/PhotoGalleryImgs/img16.jpg";
 
 // Images grouped by state
 const stateImages = {
-  Delhi: [
+  "Haryana": [
     { src: img1, alt: "Delhi Event 1" },
     { src: img2, alt: "Delhi Event 2" },
     { src: img3, alt: "Delhi Event 3" },
@@ -39,7 +39,7 @@ const stateImages = {
     { src: img10, alt: "Delhi Event 10" },
     { src: img11, alt: "Delhi Event 11" },
   ],
-  "Uttar Pradesh": [
+  "Kerala": [
     { src: img3, alt: "UP Event 1" },
     { src: img4, alt: "UP Event 2" },
     { src: img5, alt: "UP Event 3" },
@@ -55,7 +55,51 @@ const stateImages = {
     { src: img15, alt: "UP Event 13" },
     { src: img16, alt: "UP Event 14" },
   ],
-  Rajasthan: [
+  "Tamil Nadu": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Karnataka": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Maharashtra": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Andhra Pradesh": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Delhi": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Rajasthan": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "West Bengal": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Punjab": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Uttar Pradesh": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Bihar": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Orissa": [
+    { src: img5, alt: "Rajasthan Event 1" },
+    { src: img6, alt: "Rajasthan Event 2" },
+  ],
+  "Assam": [
     { src: img5, alt: "Rajasthan Event 1" },
     { src: img6, alt: "Rajasthan Event 2" },
   ],

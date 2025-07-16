@@ -7,6 +7,10 @@
   line-height: 1.7;
 }
 
+.noUnderline::after {
+  display: none;
+}
+
 .heading {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(3rem, 6vw, 4.5rem);
@@ -15,6 +19,7 @@
   letter-spacing: 1px;
   color: #111;
 }
+
 
 .content {
   font-size: 1.1rem;

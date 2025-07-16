@@ -15,8 +15,8 @@
 
 /* ========== Logo ========== */
 .nav-logo img {
-  width: clamp(100px, 20vw, 150px);
-  height: auto;
+  width: clamp(80px, 20vw, 130px);
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
