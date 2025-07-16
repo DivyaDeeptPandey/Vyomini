@@ -20,6 +20,6 @@ const CountUp = ({ target, duration = 2000 }) => {
     setDisplay(Math.floor(count.get()));
   });
 
-  return <span>{display.toLocaleString()}</span>;
+  return <span>{display.toLocaleString('en-IN')}</span>;
 };
 export default CountUp;

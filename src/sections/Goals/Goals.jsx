@@ -19,7 +19,7 @@ const goals = [
   },
   {
     img: GoalImg3,
-    title: 'Generate Widespread Awareness about Menstrual Sanitation',
+    title: 'Youth Empowerment',
   },
   {
     img: GoalImg4,

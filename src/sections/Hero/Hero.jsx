@@ -85,7 +85,7 @@ const HeroSection = () => {
           {/* 👩‍🦱 Women Reached */}
           <motion.div variants={fadeUp}>
             <span className={styles.statNumber}>
-              <CountUp target={10000} /> +{' '}
+              <CountUp target={3000000} /> +{' '}
             </span>
             Women Reached
           </motion.div>
@@ -93,17 +93,17 @@ const HeroSection = () => {
           {/* 🧠 Awareness Camps */}
           <motion.div variants={fadeUp}>
             <span className={styles.statNumber}>
-              <CountUp target={200} /> +{' '}
+              <CountUp target={15000} /> +{' '}
             </span>
-            Awareness Camps
+            Awareness Workshops
           </motion.div>
 
           {/* 🏞️ Districts Impacted */}
           <motion.div variants={fadeUp}>
             <span className={styles.statNumber}>
-              <CountUp target={15} /> +{' '}
+              <CountUp target={10000} /> +{' '}
             </span>
-            Districts Impacted
+            Enterprenures Trained
           </motion.div>
         </motion.div>
       </div>
