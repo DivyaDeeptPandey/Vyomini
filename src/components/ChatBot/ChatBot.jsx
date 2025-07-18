@@ -1,111 +1,33 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect } from 'react';
 import styles from './ChatBot.module.css';
+import { MessageCircle } from 'lucide-react';
 
-const ChatbotIcon = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([]);
+const ChatBot = () => {
+  useEffect(() => {
+    if (document.getElementById('chatbase-script')) return;
 
-  const toggleChat = () => {
-    setIsOpen(!isOpen);
-  };
+    const script = document.createElement('script');
+    script.src = 'https://www.chatbase.co/embed.min.js';
+    script.id = 'chatbase-script';
+    script.setAttribute('chatbotId', 'iCSnSdeolE73SIxLyT91h'); // replace with your ID
+    script.setAttribute('domain', 'www.chatbase.co');
+    document.body.appendChild(script);
+  }, []);
 
-  const handleSend = async (e) => {
-    e.preventDefault();
-    const input = e.target.elements.chatInput;
-    const text = input.value.trim();
-    if (!text) return;
-
-    // Show user's message immediately
-    setMessages((prev) => [...prev, { text, from: 'user' }]);
-    input.value = '';
-
-    try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message: text }),
-      });
-
-      const data = await res.json();
-
-      // Show bot's reply
-      setMessages((prev) => [...prev, { text: data.reply, from: 'bot' }]);
-    } catch (err) {
-      console.error('Error talking to backend:', err);
-      setMessages((prev) => [
-        ...prev,
-        {
-          text: 'Oops! Something went wrong while contacting the bot.',
-          from: 'bot',
-        },
-      ]);
+  const openChatManually = () => {
+    const chatBubble = document.querySelector('#chatbase-bubble-button');
+    if (chatBubble) {
+      chatBubble.click(); // Simulates a user clicking the default Chatbase bubble
     }
   };
 
   return (
     <div className={styles.chatbotContainer}>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className={styles.chatWindow}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className={styles.chatHeader}>
-              <h3 className={styles.heading}>How can we help you?</h3>
-              <button onClick={toggleChat} className={styles.closeButton}>
-                ×
-              </button>
-            </div>
-
-            <div className={styles.chatContent}>
-              {messages.length === 0 && <p>Welcome! Ask me anything.</p>}
-              {messages.map((msg, index) => (
-                <p
-                  key={index}
-                  className={`${styles.message} ${msg.from === 'user' ? styles.userMessage : ''
-                    }`}
-                >
-                  {msg.text}
-                </p>
-              ))}
-            </div>
-
-            <form onSubmit={handleSend} className={styles.inputArea}>
-              <input
-                type="text"
-                name="chatInput"
-                placeholder="Type your message..."
-                autoComplete="off"
-              />
-              <button type="submit">Send</button>
-            </form>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <button onClick={toggleChat} className={styles.chatbotButton}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
+      <button className={styles.chatbotButton} onClick={openChatManually}>
+        <MessageCircle size={28} />
       </button>
     </div>
   );
 };
 
-export default ChatbotIcon;
+export default ChatBot;
