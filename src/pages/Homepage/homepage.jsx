@@ -6,7 +6,7 @@ import AboutUsSection from "../../sections/AboutUs/AboutUs";
 import GoalsSection from "../../sections/Goals/Goals";
 import ProgramSection from "../../sections/Programs/Programs";
 import OurImpactSection from "../../sections/OurImpact/OurImpact";
-import MediaGallery from "../../sections/PhotoGallery/PhotoGallery";
+import AwardsCarousel from "../../sections/AwardsCarousel/AwardsCarousel";
 import Testimonial from "../../sections/Testimonial/Testimonial";
 import GetInTouchForm from "../../sections/GetInTouch/GetInTouch";
 
@@ -43,7 +43,7 @@ const HomePage = () => {
       <OurImpactSection />
 
       {/* 🖼️ Media Carousel */}
-      <MediaGallery autoPlay={true} interval={4000} />
+      <AwardsCarousel autoPlay={true} interval={4000} />
 
       {/* 🗣️ Testimonials */}
       <Testimonial />

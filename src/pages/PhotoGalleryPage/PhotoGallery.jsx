@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Masonry from "react-masonry-css";
-import styles from "./MediaGallery.module.css";
+import styles from "./PhotoGallery.module.css";
 import NavBar from "../../components/NavBar/NavBar";
 import { motion, AnimatePresence } from "framer-motion";
 
