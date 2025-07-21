@@ -1,128 +1,115 @@
 import React, { useState } from "react";
+import Masonry from "react-masonry-css";
 import styles from "./MediaGallery.module.css";
 import NavBar from "../../components/NavBar/NavBar";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Header image
-import headerImg from "../../assets/PhotoGalleryImgs/header.jpg";
+import headerImg from "../../assets/PhotoGalleryImgs/Delhi/delhiImg1.webp";
 
-// Import all gallery images
-import img1 from "../../assets/PhotoGalleryImgs/img1.jpg";
-import img2 from "../../assets/PhotoGalleryImgs/img2.jpg";
-import img3 from "../../assets/PhotoGalleryImgs/img3.jpg";
-import img4 from "../../assets/PhotoGalleryImgs/img4.jpg";
-import img5 from "../../assets/PhotoGalleryImgs/img5.jpg";
-import img6 from "../../assets/PhotoGalleryImgs/img6.jpg";
-import img7 from "../../assets/PhotoGalleryImgs/img7.jpg";
-import img8 from "../../assets/PhotoGalleryImgs/img8.jpg";
-import img9 from "../../assets/PhotoGalleryImgs/img9.jpg";
-import img10 from "../../assets/PhotoGalleryImgs/img10.jpg";
-import img11 from "../../assets/PhotoGalleryImgs/img11.jpg";
-import img12 from "../../assets/PhotoGalleryImgs/img12.jpg";
-import img13 from "../../assets/PhotoGalleryImgs/img13.jpg";
-import img14 from "../../assets/PhotoGalleryImgs/img14.jpg";
-import img15 from "../../assets/PhotoGalleryImgs/img15.jpg";
-import img16 from "../../assets/PhotoGalleryImgs/img16.jpg";
+// Dynamically import images grouped by state folders
+const imageModules = import.meta.glob("../../assets/PhotoGalleryImgs/*/*.webp", { eager: true });
 
-// Images grouped by state
-const stateImages = {
-  "Haryana": [
-    { src: img1, alt: "Delhi Event 1" },
-    { src: img2, alt: "Delhi Event 2" },
-    { src: img3, alt: "Delhi Event 3" },
-    { src: img4, alt: "Delhi Event 4" },
-    { src: img5, alt: "Delhi Event 5" },
-    { src: img6, alt: "Delhi Event 6" },
-    { src: img7, alt: "Delhi Event 7" },
-    { src: img8, alt: "Delhi Event 8" },
-    { src: img9, alt: "Delhi Event 9" },
-    { src: img10, alt: "Delhi Event 10" },
-    { src: img11, alt: "Delhi Event 11" },
-  ],
-  "Kerala": [
-    { src: img3, alt: "UP Event 1" },
-    { src: img4, alt: "UP Event 2" },
-    { src: img5, alt: "UP Event 3" },
-    { src: img6, alt: "UP Event 4" },
-    { src: img7, alt: "UP Event 5" },
-    { src: img8, alt: "UP Event 6" },
-    { src: img9, alt: "UP Event 7" },
-    { src: img10, alt: "UP Event 8" },
-    { src: img11, alt: "UP Event 9" },
-    { src: img12, alt: "UP Event 10" },
-    { src: img13, alt: "UP Event 11" },
-    { src: img14, alt: "UP Event 12" },
-    { src: img15, alt: "UP Event 13" },
-    { src: img16, alt: "UP Event 14" },
-  ],
-  "Tamil Nadu": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Karnataka": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Maharashtra": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Andhra Pradesh": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Delhi": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Rajasthan": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "West Bengal": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Punjab": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Uttar Pradesh": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Bihar": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Orissa": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-  "Assam": [
-    { src: img5, alt: "Rajasthan Event 1" },
-    { src: img6, alt: "Rajasthan Event 2" },
-  ],
-};
+const stateImages = {};
+for (const path in imageModules) {
+  const match = path.match(/PhotoGalleryImgs\/([^/]+)\/([^/]+\.(?:webp|jpg|png))/);
+  if (match) {
+    const state = match[1];
+    const fileName = match[2];
+    const imgUrl = imageModules[path].default;
+
+    if (!stateImages[state]) {
+      stateImages[state] = [];
+    }
+
+    stateImages[state].push({
+      src: imgUrl,
+      alt: `${state} - ${fileName}`,
+    });
+  }
+}
+
+// Sort images per state by file name
+for (const state in stateImages) {
+  stateImages[state].sort((a, b) => a.alt.localeCompare(b.alt));
+}
 
 // Sample YouTube videos
 const videos = [
   {
-    title: "Empowerment Workshop",
+    title: "Woman Transforming India Winner | Prachi Kaushik | SAM Workshops | DJJS",
+    url: "https://www.youtube.com/embed/SB_hbvyFWZs",
+  },
+  {
+    title: "Prachi Kaushik, Vyomini Social Enterprise | BW Disrupt WEISA 2024",
+    url: "https://www.youtube.com/embed/Y8JLI8xu22g",
+  },
+  {
+    title: "Episode 2 'Pad Woman' of New India Prachi Kaushik Vyomini",
     url: "https://www.youtube.com/embed/Yk8eHs3U8e4",
   },
   {
-    title: "Community Engagement",
-    url: "https://www.youtube.com/embed/FmRLsRMpVx0",
+    title: "Prachi Kaushik, Founder & Director, VYOMINI On Green TV HD",
+    url: "https://www.youtube.com/embed/QIQTNQypRsg",
+  },
+  {
+    title: "'Pad-Woman' of New India - Prachi Kaushik - Vyomini",
+    url: "https://www.youtube.com/embed/d2NX83vb27g",
+  },
+  {
+    title: "Vision for taboo-free menstruation and saving environment | Prachi Kaushik | TEDxJIET",
+    url: "https://www.youtube.com/embed/XlAE822D0Pk",
+  },
+  {
+    title: "Prachi Kaushik Social Entrepreneur",
+    url: "https://www.youtube.com/embed/yBZo3cA2LzM",
+  },
+  {
+    title: "SIrsa launch of Menstrual Health Campaign",
+    url: "https://www.youtube.com/embed/NjhBa8ZIJPY",
+  },
+  {
+    title: "Women's Week 2.0 | Prachi Kaushik - Founder & Director of Vyomini",
+    url: "https://www.youtube.com/embed/XlqVyY1pQUA",
+  },
+  {
+    title: "PADMAN met PADWOMAN Reel meet Real",
+    url: "https://www.youtube.com/embed/Ur0xcQQVcis",
+  },
+  {
+    title: "Short Term Entrepreneurship Development Program launched by NSIC",
+    url: "https://www.youtube.com/embed/bnXCGSzPsfc",
+  },
+  {
+    title: "Biodegradable Sanitary Pads in India | Pad Woman | Prachi Kaushik | VYOMINI SOCIAL ENTERPRISES",
+    url: "https://www.youtube.com/embed/ox8AagmEmPQ",
+  },
+  {
+    title: "Prachi Kaushik || Pad || Motivational Speech || Akshay Kumar || Girls | Interview Pad Woman | india|",
+    url: "https://www.youtube.com/embed/RICpryHCKkM",
+  },
+  {
+    title: "Biodegradable sanitary napkin vending machine & incinerators!",
+    url: "https://www.youtube.com/embed/12CMY0_EZl8",
+  },
+  {
+    title: "Menstruation and Hygiene in Rural India | Pad woman | Success story of VYOMINI SOCIAL ENTERPRISES",
+    url: "https://www.youtube.com/embed/WXW75wDGfSg",
   },
 ];
 
 export default function MediaGallery() {
-  const [activeTab, setActiveTab] = useState("photos"); // 'photos' or 'videos'
-  const [selectedState, setSelectedState] = useState(null); // current state name
-  const [modalImage, setModalImage] = useState(null); // currently enlarged image
+  const [activeTab, setActiveTab] = useState("photos");
+  const [selectedState, setSelectedState] = useState(null);
+  const [modalImage, setModalImage] = useState(null);
 
-  const handleBack = () => setSelectedState(null); // back to state cards
+  const handleBack = () => setSelectedState(null);
+
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 2,
+    700: 1,
+  };
 
   return (
     <>
@@ -166,7 +153,6 @@ export default function MediaGallery() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {/* State selection view */}
                 {!selectedState ? (
                   <div className={styles.stateCardGrid}>
                     {Object.keys(stateImages).map((state) => (
@@ -183,12 +169,15 @@ export default function MediaGallery() {
                     ))}
                   </div>
                 ) : (
-                  // Image grid for selected state
                   <>
                     <button onClick={handleBack} className={styles.backButton}>
                       ← Back to States
                     </button>
-                    <div className={styles.grid}>
+                    <Masonry
+                      breakpointCols={breakpointColumnsObj}
+                      className={styles.masonryGrid}
+                      columnClassName={styles.masonryColumn}
+                    >
                       {stateImages[selectedState].map((img, index) => (
                         <motion.div
                           key={index}
@@ -205,12 +194,11 @@ export default function MediaGallery() {
                           />
                         </motion.div>
                       ))}
-                    </div>
+                    </Masonry>
                   </>
                 )}
               </motion.div>
             ) : (
-              // Videos view
               <motion.div
                 key="videos"
                 className={styles.videoGrid}
@@ -241,7 +229,7 @@ export default function MediaGallery() {
         </main>
       </div>
 
-      {/* Image modal viewer */}
+      {/* Modal Viewer */}
       {modalImage && (
         <div className={styles.modal} onClick={() => setModalImage(null)}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>

@@ -58,12 +58,12 @@
   flex: 1;
 }
 
-/* === IMAGE GRID (4xN dynamic) === */
+/* === IMAGE GRID (fallback only, not used with Masonry) === */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
-  align-items: start; /* ensures container height fits content */
+  align-items: start;
 }
 
 /* === IMAGE STYLING === */
@@ -187,10 +187,11 @@
 
 .stateName {
   margin: 1rem 0 0 1rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: 'Bebas Neue', sans-serif;
   color: black;
+  letter-spacing: 0.06em; 
 }
 
 .stateSubtitle {
@@ -252,4 +253,20 @@
   .videoGrid {
     gap: 1rem;
   }
+}
+
+/* === MASONRY LAYOUT === */
+.masonryGrid {
+  display: flex;
+  margin-left: -1rem; /* gutter size offset */
+  width: auto;
+}
+
+.masonryColumn {
+  padding-left: 1rem; /* gutter size */
+  background-clip: padding-box;
+}
+
+.masonryColumn > div {
+  margin-bottom: 1rem;
 }
