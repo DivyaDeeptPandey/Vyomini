@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
  * - link (string): Internal route or external URL
  * - onClick (function): Optional click handler
  */
-const Button = ({ text, color, style: inlineStyles = {}, link, onClick }) => {
+const Button = ({ text, color, styles: inlineStyles = {}, link, onClick }) => {
   const navigate = useNavigate();
 
   // Dynamically calculate hover color using CSS color-mix

@@ -17,6 +17,7 @@ const CampusConnectPage = lazy(() => import('./pages/CampusConnectPage/CampusCon
 const VyominiUdhyamiPage = lazy(() => import('./pages/VyominiUdhyamiPage/VyominiUdhyamiPage'));
 const PhotoGalleryPage = lazy(() => import('./pages/PhotoGalleryPage/PhotoGallery'));
 const DonatePage = lazy(() => import('./pages/DonationPage/DonationPage'));
+const JobOpenings = lazy(() => import('./pages/JobOpenings/JobOpenings'));
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/media" element={<PhotoGalleryPage />} />
           <Route path="/donate" element={<DonatePage />} />
+          <Route path="/jobs" element={<JobOpenings />} />
         </Routes>
       </Suspense>
     </Router>

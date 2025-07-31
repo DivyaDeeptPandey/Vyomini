@@ -56,7 +56,7 @@ const JobApply = () => {
             <Button
                 text="Apply Now"
                 color={colors.primary}
-                link="https://docs.google.com/forms/d/e/1FAIpQLSfAq7NLBC_XogH533Ha1yKQt_cood7N9W4pQyFkRUKUaAzK9Q/viewform"
+                link="/jobs"
                 styles={{
                     height: "50px",
                     width: "100%",
