@@ -2,39 +2,44 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Testimonial.module.css';
 
-// Testimonial data array
+import Img1 from '../../assets/testimonials/1.jpeg';
+import Img2 from '../../assets/testimonials/2.jpeg';
+import Img3 from '../../assets/testimonials/3.jpeg';
+import Img4 from '../../assets/testimonials/4.jpeg';
+import Img5 from '../../assets/testimonials/5.jpeg';
+import Img6 from '../../assets/testimonials/6.jpeg';
+// Simplified testimonial data array with only images
 const testimonials = [
   {
     id: 1,
-    name: 'Anupam Mishra',
-    role: 'CEO',
-    content: 'VYOMINI model of Sustaianable Sanittaion is the real answer to all sanitation isuues which is affordable also.',
-    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-    rating: 5
+    image: Img1
   },
   {
     id: 2,
-    name: 'Shivalika Mishra',
-    role: 'CSR Manager, NSF',
-    content: 'We have worked with VYOMINI in 2019 they are committed organization deliver activities in time.',
-    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
-    rating: 4
+    image: Img2
   },
   {
     id: 3,
-    name: 'Meenu',
-    role: 'SHG members, Hisar',
-    content: 'VYOMINI UDYAMI consortium helped me in my business development.',
-    avatar: 'https://randomuser.me/api/portraits/women/63.jpg',
-    rating: 5
+    image: Img3
+  },
+  { 
+    id: 4,
+    image: Img4
+  },
+  {
+    id: 5,
+    image: Img5
+  },
+  {
+    id: 6,
+    image: Img6
   }
 ];
 
 const Testimonial = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);   // Currently active testimonial index
-  const [direction, setDirection] = useState(0);         // Animation direction: 1 = right, -1 = left
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  // Show next testimonial and set direction to right
   const nextTestimonial = () => {
     setDirection(1);
     setCurrentIndex((prev) =>
@@ -42,7 +47,6 @@ const Testimonial = () => {
     );
   };
 
-  // Show previous testimonial and set direction to left
   const prevTestimonial = () => {
     setDirection(-1);
     setCurrentIndex((prev) =>
@@ -50,45 +54,35 @@ const Testimonial = () => {
     );
   };
 
-  // Jump to a specific testimonial and determine direction
   const goToTestimonial = (index) => {
     setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
   };
 
-  // Animation variants for testimonial cards
   const testimonialVariants = {
     enter: (dir) => ({
-      x: dir > 0 ? 1000 : -1000, // Start from left or right
-      opacity: 0
+      x: dir > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8
     }),
     center: {
       x: 0,
       opacity: 1,
+      scale: 1,
       transition: {
         x: { type: 'spring', stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 }
+        opacity: { duration: 0.3 },
+        scale: { duration: 0.3 }
       }
     },
     exit: (dir) => ({
-      x: dir > 0 ? -1000 : 1000, // Exit to opposite direction
+      x: dir > 0 ? -1000 : 1000,
       opacity: 0,
+      scale: 0.8,
       transition: {
         x: { type: 'spring', stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 }
-      }
-    })
-  };
-
-  // Animation variants for stars
-  const starVariants = {
-    hidden: { scale: 0 },
-    visible: (i) => ({
-      scale: 1,
-      transition: {
-        delay: i * 0.1,
-        type: 'spring',
-        stiffness: 175
+        opacity: { duration: 0.3 },
+        scale: { duration: 0.3 }
       }
     })
   };
@@ -96,57 +90,30 @@ const Testimonial = () => {
   return (
     <section className={styles.testimonialSection}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Testimonial</h2>
+        <h2 className={styles.sectionTitle}>Testimonials</h2>
 
-        {/* Main testimonial card slider */}
-        <div className={styles.testimonialWrapper}>
+        {/* Image Carousel Container */}
+        <div className={styles.carouselContainer}>
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={testimonials[currentIndex].id}
-              custom={direction}                            // Pass direction to variants
+              custom={direction}
               variants={testimonialVariants}
               initial="enter"
               animate="center"
               exit="exit"
-              className={styles.testimonialCard}
+              className={styles.imageCard}
             >
-              <div className={styles.quoteIcon}>"</div>
-
-              {/* Testimonial message */}
-              <p className={styles.testimonialContent}>
-                {testimonials[currentIndex].content}
-              </p>
-
-              {/* Star rating animation */}
-              <div className={styles.rating}>
-                {[...Array(5)].map((_, i) => (
-                  <motion.span
-                    key={i}
-                    custom={i}
-                    initial="hidden"
-                    animate="visible"
-                    variants={starVariants}
-                    className={`${styles.star} ${i < testimonials[currentIndex].rating ? styles.filled : ''}`}
-                  >
-                    ★
-                  </motion.span>
-                ))}
-              </div>
-
-              {/* Author info */}
-              <div className={styles.authorInfo}>
+              {/* Testimonial Image */}
+              <div className={styles.imageWrapper}>
                 <motion.img
-                  src={testimonials[currentIndex].avatar}
-                  alt={`Avatar of ${testimonials[currentIndex].name}`}
-                  className={styles.avatar}
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: 'spring', stiffness: 200 }}
+                  src={testimonials[currentIndex].image}
+                  alt={`Testimonial ${testimonials[currentIndex].id}`}
+                  className={styles.testimonialImage}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
                 />
-                <div>
-                  <h4 className={styles.authorName}>{testimonials[currentIndex].name}</h4>
-                  <p className={styles.authorRole}>{testimonials[currentIndex].role}</p>
-                </div>
               </div>
             </motion.div>
           </AnimatePresence>

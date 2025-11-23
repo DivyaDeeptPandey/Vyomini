@@ -13,7 +13,7 @@
 
 /* ===== Overlay for Darkening & Layout ===== */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
   width: 100%;
   height: 100%;
   display: flex;

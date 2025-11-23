@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CountUp from './CountUp';
 import styles from './Hero.module.css';
-import bgImage from '../../assets/HeroImg/hero.avif';
+import bgImage from '../../assets/HeroImg/hero.jpeg';
 import Button from '../../components/Button/Button';
 
 // 🔁 Parent container animation: stagger children
