@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './AboutUs.module.css';
-import aboutImage from '../../assets/AboutImg/about.avif';
+import aboutImage from '../../assets/AboutImg/about.jpg';
 import { Link } from 'react-router-dom';
 
 const AboutUsSection = () => {

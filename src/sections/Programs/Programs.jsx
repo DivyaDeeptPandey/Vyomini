@@ -6,8 +6,9 @@ import ProgramCard from "../../components/ProgramCard/ProgramCard.jsx";
 // Program images
 import img1 from "../../assets/program1.jpg";
 import img2 from "../../assets/program2.jpg";
-import img3 from "../../assets/program3.jpeg";
+import img3 from "../../assets/program3.jpg";
 import img4 from "../../assets/program4.jpg";
+import img5 from "../../assets/program5.jpg";
 
 const ProgramSection = () => {
   const [colors, setColors] = useState({
@@ -64,7 +65,7 @@ const ProgramSection = () => {
       title: "NGOs capacity building programs",
       description:
         "Empowering aspiring entrepreneurs with training, legal guidance, financial literacy, and marketing access — all for just ₹500/year to support sustainable ventures.",
-      image: img4,
+      image: img5,
       buttonLink: "/vyomini-udhyami-consortium",
       buttonColor: colors.primary,
     },
