@@ -248,7 +248,7 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
                     </div>
                 </section>
 
-                {/* === Description Paragraph === */}
+                {/* === Description Section === */}
                 <motion.section
                     className={styles.content}
                     variants={containerVariants}
@@ -256,7 +256,7 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
                     animate="visible"
                 >
                     <motion.p variants={itemVariants}>
-                        <strong>Campus Connect</strong> is Vyomini’s youth-centric initiative that bridges awareness and action.
+                        <strong>Campus Connect</strong> is Vyomini's youth-centric initiative that bridges awareness and action.
                         Through engaging seminars, interactive workshops, and student-led campaigns across colleges and universities,
                         we aim to spark meaningful conversations around health, hygiene, and empowerment.
                     </motion.p>
@@ -265,6 +265,84 @@ export default function CampusConnectPage({ autoPlay = true, interval = 5000 }) 
                         institutions into powerful platforms for change — encouraging young minds to champion causes that impact
                         their communities.
                     </motion.p>
+                </motion.section>
+
+                {/* === New Detailed Information Section === */}
+                <motion.section 
+                    className={styles.detailedSection}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <motion.div className={styles.programOverview} variants={itemVariants}>
+                        <h3 className={styles.detailedHeading}>Our Flagship Youth Empowerment Program</h3>
+                        <p className={styles.programDescription}>
+                            Our flagship program to empower youth in right direction for the nation building is connecting 
+                            education institution and supporting youth for entrepreneurship development, menstrual health 
+                            awareness, positive engagement, field visit, internship, personality development, exposure to 
+                            rural lifestyle etc. We have done MoU with various education institutions to promote sustainable 
+                            sanitation, entrepreneurship and internship opportunities.
+                        </p>
+                    </motion.div>
+
+                    {/* Statistics */}
+                    <motion.div className={styles.statsContainer} variants={itemVariants}>
+                        <div className={styles.statItem}>
+                            <div className={styles.statNumber}>50+</div>
+                            <div className={styles.statLabel}>Institutions Reached Out</div>
+                        </div>
+                        <div className={styles.statItem}>
+                            <div className={styles.statNumber}>5500+</div>
+                            <div className={styles.statLabel}>Students Engaged</div>
+                        </div>
+                    </motion.div>
+
+                    {/* Program Activities */}
+                    <motion.div className={styles.activitiesSection} variants={itemVariants}>
+                        <h4 className={styles.activitiesHeading}>Program Activities Include:</h4>
+                        <div className={styles.activitiesGrid}>
+                            <div className={styles.activityCard}>
+                                <h5>Entrepreneurship Development</h5>
+                                <p>Nurturing young entrepreneurs with skills and opportunities</p>
+                            </div>
+                            <div className={styles.activityCard}>
+                                <h5>Menstrual Health Awareness</h5>
+                                <p>Breaking taboos and promoting hygiene education</p>
+                            </div>
+                            <div className={styles.activityCard}>
+                                <h5>Positive Engagement</h5>
+                                <p>Creating meaningful youth participation platforms</p>
+                            </div>
+                            <div className={styles.activityCard}>
+                                <h5>Field Visits & Rural Exposure</h5>
+                                <p>Connecting urban youth with rural realities</p>
+                            </div>
+                            <div className={styles.activityCard}>
+                                <h5>Internship Programs</h5>
+                                <p>Practical learning and career development opportunities</p>
+                            </div>
+                            <div className={styles.activityCard}>
+                                <h5>Personality Development</h5>
+                                <p>Building confident and responsible future leaders</p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Call to Action */}
+                    <motion.div className={styles.ctaSection} variants={itemVariants}>
+                        <div className={styles.ctaContent}>
+                            <h4 className={styles.ctaHeading}>Join the Movement!</h4>
+                            <p className={styles.ctaDescription}>
+                                Connect your institution, explore internship opportunities, or invite us as speakers 
+                                for your next campus event. Together, let's build a brighter future.
+                            </p>
+                            <div className={styles.ctaButtons}>
+                                <button className={styles.ctaButtonPrimary}>Connect Your Institution</button>
+                                <button className={styles.ctaButtonSecondary}>Invite as Speaker</button>
+                                <button className={styles.ctaButtonSecondary}>Internship Opportunities</button>
+                            </div>
+                        </div>
+                    </motion.div>
                 </motion.section>
             </main>
             <Footer />

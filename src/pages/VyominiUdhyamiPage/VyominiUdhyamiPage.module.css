@@ -18,7 +18,7 @@
 .line{
   width: 4px;
   height: 50px;
-  background-color: var(--primary-color, #429122); /* Green color */
+  background-color: var(--primary-color, #429122);
   border-radius: 2px;
 }
 .heading{
@@ -29,6 +29,7 @@
   text-transform: uppercase;
   position: relative;
 }
+
 /* Image banner */
 .image {
   width: 100%;
@@ -51,7 +52,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   max-width: 800px;
 }
-
 
 /* Description text */
 .description {
@@ -111,4 +111,216 @@
 
 .formLink:hover {
   background-color: #357b18;
+}
+
+/* === New Entrepreneurship Section Styles === */
+.entrepreneurshipSection {
+  max-width: 800px;
+  margin: 4rem auto 0;
+  padding: 2rem 0;
+}
+
+.sectionHeading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: #111;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.sectionHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary-color, #429122);
+  border-radius: 2px;
+}
+
+/* Program Cards */
+.programCard {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid var(--primary-color, #429122);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.programCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.programTitle {
+  font-size: 1.4rem;
+  color: #111;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.programTitle::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color, #429122);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.programDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.programUpdate {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  font-style: italic;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--primary-color, #429122);
+}
+
+/* Short Term Programs */
+.shortTermPrograms {
+  margin-top: 3rem;
+}
+
+.programsSubheading {
+  font-size: 1.5rem;
+  color: #111;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.programItem {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.programItem:hover {
+  border-color: var(--primary-color, #429122);
+  transform: translateY(-3px);
+}
+
+.programItemTitle {
+  font-size: 1.2rem;
+  color: var(--primary-color, #429122);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.programItemDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* Additional CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  border: 2px dashed var(--primary-color, #429122);
+}
+
+.ctaText {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .entrepreneurshipSection {
+    margin: 3rem auto 0;
+    padding: 1rem 0;
+  }
+
+  .sectionHeading {
+    font-size: 2rem;
+  }
+
+  .programCard {
+    padding: 1.5rem;
+  }
+
+  .programTitle {
+    font-size: 1.2rem;
+  }
+
+  .programsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .programItem {
+    padding: 1.25rem;
+  }
+
+  .ctaSection {
+    padding: 2rem 1.5rem;
+  }
+
+  .ctaText {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .programCard {
+    padding: 1.25rem;
+  }
+
+  .programTitle {
+    font-size: 1.1rem;
+  }
+
+  .programDescription {
+    font-size: 1rem;
+  }
+
+  .programsSubheading {
+    font-size: 1.3rem;
+  }
+
+  .ctaSection {
+    padding: 1.5rem 1rem;
+  }
 }

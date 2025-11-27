@@ -8,7 +8,7 @@
 .headingContainer {
   display: flex;
   align-items: center;
-  justify-content: center; /* ensures the whole group is centered */
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -26,6 +26,7 @@
   color: #111;
   margin: 0;
 }
+
 .content {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -188,14 +189,203 @@
   transform: scale(1.2);
 }
 
-/* Description below carousel */
-.description {
-  max-width: 900px;
-  margin: 3rem auto 0;
+/* === New Detailed Section Styles === */
+.detailedSection {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.programOverview {
   text-align: center;
+  margin-bottom: 3rem;
+}
+
+.detailedHeading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.detailedHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary-color, #429122);
+  border-radius: 2px;
+}
+
+.programDescription {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Statistics */
+.statsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  flex: 1;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Fixed height for consistency */
+}
+
+.statNumber {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--primary-color, #429122);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
   font-size: 1.1rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Activities Grid */
+.activitiesSection {
+  margin: 4rem 0;
+}
+
+.activitiesHeading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: #111;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.activitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.activityCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--primary-color, #429122);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activityCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.activityCard h5 {
+  font-size: 1.3rem;
+  color: #111;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.activityCard p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Call to Action Section */
+.ctaSection {
+  background: linear-gradient(135deg, var(--primary-color, #429122) 0%, #2d6a1a 100%);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  margin-top: 3rem;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaHeading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ctaDescription {
+  font-size: 1.2rem;
   line-height: 1.7;
-  color: #333;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaButtonPrimary {
+  background: white;
+  color: var(--primary-color, #429122);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.ctaButtonSecondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButtonSecondary:hover {
+  background: white;
+  color: var(--primary-color, #429122);
+  transform: translateY(-2px);
 }
 
 /* Responsive styles */
@@ -227,9 +417,36 @@
     height: 45px;
   }
 
-  .description {
-    font-size: 1rem;
-    padding: 0 1rem;
+  .detailedHeading {
+    font-size: 2rem;
+  }
+
+  .statsContainer {
+    gap: 2rem;
+  }
+
+  .statItem {
+    min-width: 150px;
+    padding: 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 2.5rem;
+  }
+
+  .activitiesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
@@ -248,5 +465,44 @@
 
   .slideCaption p {
     display: none;
+  }
+
+  .statsContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .statItem {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .ctaSection {
+    padding: 2rem 1rem;
+  }
+
+  .ctaHeading {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .statsContainer {
+    gap: 2rem;
+  }
+  
+  .statItem {
+    flex: 0 0 200px; /* Slightly smaller on tablets */
+    min-height: 140px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statItem {
+    flex: 0 0 100%; /* Full width on mobile */
+    max-width: 280px;
+    min-height: 130px;
+    padding: 1.5rem;
   }
 }
