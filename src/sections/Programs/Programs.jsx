@@ -49,7 +49,7 @@ const ProgramSection = () => {
       description:
         "Vyomini partners with educational institutions for change via workshops, research, and capacity-building. We promote leadership and sustainable menstrual health education.",
       image: img3,
-      buttonLink: "/campus-connect-program",
+      buttonLink: "/menstrual-health-program",
       buttonColor: colors.primary,
     },
     {
@@ -58,7 +58,7 @@ const ProgramSection = () => {
         "Empowering aspiring entrepreneurs with training, legal guidance, financial literacy, and marketing access — all for just ₹500/year to support sustainable ventures.",
       image: img4,
       reverse: true,
-      buttonLink: "/vyomini-udhyami-consortium",
+      buttonLink: "/campus-connect-program",
       buttonColor: colors.secondary,
     },
     {

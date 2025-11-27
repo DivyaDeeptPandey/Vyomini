@@ -102,6 +102,74 @@ export default function VyominiUdhyamiPage() {
             />
           </motion.div>
         </motion.div>
+
+        {/* === New Entrepreneurship Programs Section === */}
+        <motion.section 
+          className={styles.entrepreneurshipSection}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h3 className={styles.sectionHeading} variants={itemVariants}>
+            Entrepreneurship Programs
+          </motion.h3>
+
+          {/* Entrepreneurship Development Training */}
+          <motion.div className={styles.programCard} variants={itemVariants}>
+            <h4 className={styles.programTitle}>Entrepreneurship Development Training Program</h4>
+            <p className={styles.programDescription}>
+              Addressing needs of small and marginalized entrepreneurs through digital Marketing, 
+              e-commerce, technical training, packaging and product design.
+            </p>
+          </motion.div>
+
+          {/* Incubation Program */}
+          <motion.div className={styles.programCard} variants={itemVariants}>
+            <h4 className={styles.programTitle}>Sanitary Napkins Incubation Program</h4>
+            <p className={styles.programDescription}>
+              In association with MSMS NSIC Okhla, Vyomini set up first of its kind sanitary napkins 
+              incubation training program and trained 100+ entrepreneurs in offline mode wherein they 
+              learned machine operation, sanitary napkin manufacturing.
+            </p>
+            <p className={styles.programUpdate}>
+              During the COVID pandemic, we shifted the program to online mode, where participants 
+              learn complete knowledge of entrepreneurship and marketing.
+            </p>
+          </motion.div>
+
+          {/* Short Term Programs */}
+          <motion.div className={styles.shortTermPrograms} variants={itemVariants}>
+            <h4 className={styles.programsSubheading}>Short Term Entrepreneurship Development Programs</h4>
+            <div className={styles.programsGrid}>
+              <div className={styles.programItem}>
+                <h5 className={styles.programItemTitle}>One Week Program</h5>
+                <p className={styles.programItemDescription}>
+                  One week entrepreneurship training program conducted with SHGs to promote local business
+                </p>
+              </div>
+              <div className={styles.programItem}>
+                <h5 className={styles.programItemTitle}>Two Days Program</h5>
+                <p className={styles.programItemDescription}>
+                  Two days entrepreneurship development program for education institutions and students
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Additional CTA */}
+          <motion.div className={styles.ctaSection} variants={itemVariants}>
+            <p className={styles.ctaText}>
+              Ready to start your entrepreneurship journey? Join our consortium today!
+            </p>
+            <div className={styles.formLinkWrapper}>
+              <Button
+                text="Become a Member Now"
+                color="#429122"
+                link="https://docs.google.com/forms/d/e/1FAIpQLSdjglByxGZ6h8GqThp5-e8wU1Sru0LxxiEe6r2Q323wCxOL7w/viewform?vc=0&c=0&w=1"
+              />
+            </div>
+          </motion.div>
+        </motion.section>
       </motion.section>
 
       {/* Footer */}
